@@ -20,7 +20,6 @@ Estos son los archivos necesarios para nuestro proyecto:
 En el archivo `index.html` tenemos que linkar los dos archivos que hemos creeado, el `styles.css` y el `scripts.js`.
 
 <!-- index.html -->
-`
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -34,4 +33,11 @@ En el archivo `index.html` tenemos que linkar los dos archivos que hemos creeado
   <script src="./scripts.js"></script>
 </body>
 </html>
-`
+
+### Nuestro juego
+El juego tiene 16 cartas, cada una está creada por un `div` contenedor que hemos llamado `.memory-card`, el cuál tiene dos imágenes `SVG`. La primera imágen será la cara frontal `front-card` y la segunda será común a todas, con el logo original de Nintendo cómo `back-card`.
+
+<div class="memory-card">
+  <img class="front-card" src="img/flower-snow.svg" alt="Flor de Nieve">
+  <img class="back-card" src="img/nintendo.svg" alt="Logo de Nintendo">
+</div>
