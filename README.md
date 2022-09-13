@@ -15,3 +15,23 @@ Estos son los archivos necesarios para nuestro proyecto:
 🎸  cd memory-game
 🎸  touch index.html styles.css scripts.js
 🎸  mkdir assets
+
+### En nuestro HTML
+En el archivo `index.html` tenemos que linkar los dos archivos que hemos creeado, el `styles.css` y el `scripts.js`.
+
+<!-- index.html -->
+`
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Super Mario Bros 3 - Juego de memoria</title>
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <script src="./scripts.js"></script>
+</body>
+</html>
+`
