@@ -11,14 +11,16 @@ Estos son los archivos necesarios para nuestro proyecto:
 3. Dentro generamos los archivos `index.html` `styles.css` `scripts.js`
 4. Creamos la carpeta `assets` 
 
-🎸  mkdir memory-game
-🎸  cd memory-game
-🎸  touch index.html styles.css scripts.js
-🎸  mkdir assets
+En la consola:
+- 🎸  mkdir memory-game
+- 🎸  cd memory-game
+- 🎸  touch index.html styles.css scripts.js
+- 🎸  mkdir assets
 
 ### En nuestro HTML
 En el archivo `index.html` tenemos que linkar los dos archivos que hemos creeado, el `styles.css` y el `scripts.js`.
 
+<pre><code>
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
@@ -33,11 +35,15 @@ En el archivo `index.html` tenemos que linkar los dos archivos que hemos creeado
   <script src="./scripts.js"></script>
 </body>
 </html>
+</code></pre>
 
 ### Nuestro juego
 El juego tiene 16 cartas, cada una está creada por un `div` contenedor que hemos llamado `.memory-card`, el cuál tiene dos imágenes `SVG`. La primera imágen será la cara frontal `front-card` y la segunda será común a todas, con el logo original de Nintendo cómo `back-card`.
 
+<pre><code>
 <div class="memory-card">
   <img class="front-card" src="img/flower-snow.svg" alt="Flor de Nieve">
   <img class="back-card" src="img/nintendo.svg" alt="Logo de Nintendo">
 </div>
+</code></pre>
+
