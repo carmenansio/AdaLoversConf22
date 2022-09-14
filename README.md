@@ -1,8 +1,8 @@
-## AdaLoversConf22-WIP
+## 💃 AdaLoversConf22-WIP
 
 En este tutorial veremos conceptos básico de HTML, CSS y JS. Tocaremos transiciones, data-attributes, flexbox... no hace falta ser una experta para seguir este tutorial, si sabéis que estos lenguajes web existen, es todo lo que se necesita 🤘
 
-### Arquitectura de archivos
+### 🏗 Arquitectura de archivos
 
 Estos son los archivos necesarios para nuestro proyecto:
 
@@ -17,7 +17,7 @@ En la consola:
 - 🎸  touch index.html styles.css scripts.js
 - 🎸  mkdir assets
 
-### Cositas en nuestro HTML
+### 🍱 Cositas en nuestro HTML
 En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado, el `styles.css` y el `scripts.js`.
 
 ```
@@ -37,7 +37,7 @@ En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado,
 </html>
 ```
 
-### Nuestro jueguico de cartas
+### 🃏 Nuestro jueguico de cartas
 El juego tiene 16 cartas, cada una está creada por un `div` contenedor que hemos llamado `.memory-card`, el cuál tiene dos imágenes `SVG`. La primera imágen será la cara frontal `front-card` y la segunda será común a todas, con el logo original de Nintendo cómo `back-card`.
 
 ```
@@ -47,5 +47,5 @@ El juego tiene 16 cartas, cada una está creada por un `div` contenedor que hemo
 </div>
 ```
 
-### Assets para nuestro jueguico
+### 🧩 Assets para nuestro jueguico
 Los assets originales los podéis encontrar en mi perfil de Community de Figma
