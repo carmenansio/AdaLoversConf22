@@ -18,7 +18,7 @@ En la consola:
 - 🎸  mkdir assets
 
 ### Cositas en nuestro HTML
-En el archivo `index.html` tenemos que linkar los dos archivos que hemos creeado, el `styles.css` y el `scripts.js`.
+En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado, el `styles.css` y el `scripts.js`.
 
 ```
 <!-- index.html -->
