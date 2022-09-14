@@ -38,7 +38,7 @@ En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado,
 ```
 
 ### 🃏 Nuestro jueguico de cartas
-El juego tiene 16 cartas, cada una está creada por un `div` contenedor que hemos llamado `.memory-card`, el cuál tiene dos imágenes `SVG`. La primera imágen será la cara frontal `front-card` y la segunda será común a todas, con el logo original de Nintendo cómo `back-card`.
+El juego tiene 18 cartas, cada una está creada por un `div` contenedor que hemos llamado `.memory-card`, el cuál tiene dos imágenes `SVG`. La primera imágen será la cara frontal `front-card` y la segunda será común a todas, con el logo original de Nintendo cómo `back-card`.
 
 ```
 <div class="memory-card">
