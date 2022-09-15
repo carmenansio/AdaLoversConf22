@@ -49,3 +49,8 @@ El juego tiene 18 cartas, cada una está creada por un `div` contenedor que hemo
 
 ### 🧩 Assets para nuestro jueguico
 Los assets originales los podéis encontrar en mi perfil de Community de Figma
+
+
+
+### Enlaces con Jueguitos Web
+- Jamie-Coulter en [codepen](https://trost.notion.site/trost/Jamie-Coulter-s-CodePen-Gameshttps-codepen-io-jcoulterdesign-full-NeOQzX-1827d229ceea47cea1255c195c95d78d)
