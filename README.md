@@ -111,8 +111,9 @@ body {
 //TODO añadir la clase .active
 //TODO añadir las transiciones entre front y back (flip card)
 ### 🧩 Assets para nuestro jueguico
-Los assets originales los podéis encontrar en mi perfil de Community de Figma
-
+- Los assets originales los podéis encontrar en mi perfil de Community de Figma
+- En la carpeta assets en formato `.png` y `.svg`
+- SVGOMG para optimizar los `.svg`
 
 ### Enlaces con Jueguitos Web
 - Jamie-Coulter en [codepen](https://trost.notion.site/trost/Jamie-Coulter-s-CodePen-Gameshttps-codepen-io-jcoulterdesign-full-NeOQzX-1827d229ceea47cea1255c195c95d78d)
