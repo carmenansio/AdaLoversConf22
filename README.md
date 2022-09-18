@@ -42,8 +42,16 @@ El juego tiene 18 cartas, cada una está creada por un `div` contenedor que hemo
 
 ```
 <div class="memory-card">
-  <img class="front-card" src="img/flower-snow.svg" alt="Flor de Nieve">
-  <img class="back-card" src="img/nintendo.svg" alt="Logo de Nintendo">
+  <img
+    class="front-card"
+    src="assets/svg/flower-snow.svg"
+    alt="Flor de Nieve"
+  />
+  <img
+    class="back-card"
+    src="assets/svg/nintendo.svg"
+    alt="Logo de Nintendo"
+  />
 </div>
 ```
 ### 🍱 Layout principal
@@ -58,20 +66,6 @@ Utilizaremos un reset muy básico pero efectivo 👇
 
 ```
 /* reset.css */
-
-body {
-  height: 100vh;
-  display: flex;
-  background: #060AB2;
-}
-
-.memory-game {
-  width: 640px;
-  height: 640px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-}
 
 * {
   padding: 0;
@@ -115,5 +109,7 @@ body {
 - En la carpeta assets en formato `.png` y `.svg`
 - SVGOMG para optimizar los `.svg`
 
-### Enlaces con Jueguitos Web
+### 🏴‍☠️ Enlace del jueguico en codepen
+- Proyecto en [codepen](https://codepen.io/carmenansio/pen/OJZMBwq/c9a3da5deb777c337616360afb27e8a2)
+### 👾 Enlaces con Jueguitos Web
 - Jamie-Coulter en [codepen](https://trost.notion.site/trost/Jamie-Coulter-s-CodePen-Gameshttps-codepen-io-jcoulterdesign-full-NeOQzX-1827d229ceea47cea1255c195c95d78d)

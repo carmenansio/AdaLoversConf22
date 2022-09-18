@@ -1,0 +1,38 @@
+:root {
+  --fill: #fc93e4;
+}
+
+/* reset.css */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* styles.css */
+
+body {
+  height: 100vh;
+  display: flex;
+}
+
+.memory-game {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.memory-card {
+  width: 150px;
+  height: 250px;
+  display: flex;
+  background-color: var(--fill);
+}
+
+img.front-card,
+img.back-card {
+  width: 100%;
+}
