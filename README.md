@@ -46,10 +46,72 @@ El juego tiene 18 cartas, cada una está creada por un `div` contenedor que hemo
   <img class="back-card" src="img/nintendo.svg" alt="Logo de Nintendo">
 </div>
 ```
+### 🍱 Layout principal
 
+```
+<section></section>
+```
+
+### 🍍 Dando estilo a nuestro jueguico
+
+Utilizaremos un reset muy básico pero efectivo 👇
+
+```
+/* reset.css */
+
+body {
+  height: 100vh;
+  display: flex;
+  background: #060AB2;
+}
+
+.memory-game {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+```
+
+Un poco de teoría:
+
+- El modelo de caja 'box-sizing': La propiedad `border-box` incluye los padding y valores de borders dentro del tamaño total del elemento, width y height. Así simplificamos los cálculos.
+
+// TODO
+- Indicando al body que tenga un `display: flex` y un `margin: auto` a la clase .memory-game que actua como contenedo, creamo una alineación vertical y horaizontal.
+
+- La clase `.memory-game` también será un contenedor con comportamiento `flex-container`. Por defecto, los elementos vienen seteados con `shrink` en lo ancho para ajustarse al contenedor. Seteando `flex-wrap` con el valor `wrap`, los `flex-items` se wrapearan a lo largo de multiples lineas dependiendo de su propio tamaño.
+
+```
+/* styles.css */
+
+body {
+  height: 100vh;
+  display: flex;
+  background: #060AB2;
+}
+
+.memory-game {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+```
+
+### 🍿 Animando el cotarro
+//TODO añadir la clase .active
+//TODO añadir las transiciones entre front y back (flip card)
 ### 🧩 Assets para nuestro jueguico
 Los assets originales los podéis encontrar en mi perfil de Community de Figma
-
 
 
 ### Enlaces con Jueguitos Web
