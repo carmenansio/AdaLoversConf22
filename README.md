@@ -56,8 +56,11 @@ El juego tiene 18 cartas, cada una está creada por un `div` contenedor que hemo
 ```
 ### 🍱 Layout principal
 
+![Board back](https://assets.codepen.io/527512/board-back.png)
+![Board front](https://assets.codepen.io/527512/board-front.png)
+
 ```
-<section></section>
+<section class="memory-game"></section>
 ```
 
 ### 🍍 Dando estilo a nuestro jueguico
