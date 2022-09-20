@@ -21,16 +21,15 @@ body {
 
 .memory-game {
   width: 100vw;
-  height: 60vw;
+  height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-content: space-around;
-  justify-content: space-around;
+  flex-flow: column wrap;
+  place-content: space-around;
+  justify-content: center;
 }
 
 .memory-card {
-  width: calc(25% - 120px);
+  width: calc(16.666% - 10px);
   height: calc(33.333% - 10px);
   margin: 5px;
   position: relative;
