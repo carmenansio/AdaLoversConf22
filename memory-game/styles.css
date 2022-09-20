@@ -17,15 +17,17 @@
 body {
   height: 100vh;
   display: flex;
+  cursor: url('./assets/cursor.cur'), auto;
 }
 
 .memory-game {
   width: 100vw;
   height: 100vh;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   place-content: space-around;
   justify-content: center;
+  perspective: 1000px;
 }
 
 .memory-card {
@@ -34,6 +36,8 @@ body {
   margin: 5px;
   position: relative;
   transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
 }
 
 .memory-card:active {
@@ -53,4 +57,9 @@ body {
   position: absolute;
   border-radius: 5px;
   background-color: var(--fill);
+  backface-visibility: hidden;
+}
+
+.front-card {
+  transform: rotateY(180deg);
 }
