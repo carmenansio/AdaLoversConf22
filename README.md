@@ -244,7 +244,7 @@ To the `.memory-card` elements let’s add `transform-style: preserve-3d`, to po
   transform-style: preserve-3d;
 }
 ```
-Now, a transition has to be applied to the `transform` property to produce the movement effect:
+Aplicamos una transición con la propiedad `transform` para producir el efecto de movimiento:
 
 ```
 /* styles.css */
