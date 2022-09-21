@@ -103,21 +103,23 @@ body {
 }
 ```
 ### 🍍 Dando estilo a nuestro jueguico
-Each card width and height is calculated with calc() CSS function. Let’s make three rows, four card each by setting width to 25% and height to 33.333% minus 10px from margin.
+La altura y el ancho de cada carta está calculado con la función `calc()` de `CSS`, hemos creado `3 filas`, con `6 cartas` en cada fila con un `16.6%` y una altura de `33.3%` y restamos 10px para añadir el margen entre cartas.
 
-In order to position .memory-card children, let’s add position: relative so we can position the children absolutely, relative to it.
+Para poder posicionar los "hijos" del contenedor `.memory-card`, hemos añadido la propiedad `position: relative`, para poder posicionar los hijos de manera absoluta `position: absolute` relativa al contenedor 'madre'.
 
-The property position: absolute set to both front-face and back-face, will remove the elements from the original position, and stack them on top of each other.
+La propiedad `position: absolute` está indicada a ambas caras de las cartas `.front-card` y `.back-card` esto hará que los elementos salgan de su flujo normal y se posicionen una cara sobre otra.
 
 ```
 /* styles.css */
 
 .memory-card {
-  width: calc(25% - 10px);
+  width: calc(16.666% - 10px);
   height: calc(33.333% - 10px);
   margin: 5px;
   position: relative;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
 }
 
 .front-face,
@@ -126,16 +128,16 @@ The property position: absolute set to both front-face and back-face, will remov
   height: 100%;
   padding: 20px;
   position: absolute;
-  border-radius: 5px;
-  background: #1C7CCC;
+  border-radius: 10px;
+  border: 3px solid var(--border);
 }
 ```
-The template should be looking like this:
 
 //TODO añadir pantallazo de este estado
 
 ### 🍿 Animando el cotarro
-Let’s also add a click effect. The `:active` pseudo class will be triggered every time the element gets clicked and will apply a `.2s transition` to its size:
+Vamos a añadir una micro interacción que simulará un `efecto click`. La pseudo clase `:active` actuará de trigger cada vez que el elemento sea clicado y aplicará una animación al tamaño de la carta con `.2s transition`.
+
 
 ```
 .memory-card {
@@ -155,6 +157,9 @@ Let’s also add a click effect. The `:active` pseudo class will be triggered ev
  ```
 
 ### 👋 Añadir cursor custom
+Hemos añadido la manita de Mario como cursor para simular que es él quién está seleccionando las cartas.
+
+Podemos crear un cursor custom con la siguiente linea de código:
 
 ```
 /* styles.css */
