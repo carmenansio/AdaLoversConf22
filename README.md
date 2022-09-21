@@ -22,10 +22,10 @@ Estos son los archivos necesarios para nuestro proyecto:
 4. Creamos la carpeta `assets` 
 
 En la consola:
-- 🎸  mkdir memory-game
-- 🎸  cd memory-game
-- 🎸  touch index.html styles.css scripts.js
-- 🎸  mkdir assets
+- 1️⃣  mkdir memory-game
+- 2️⃣  cd memory-game
+- 3️⃣  touch index.html styles.css scripts.js
+- 4️⃣  mkdir assets
 
 ### 🍱 Cositas en nuestro HTML
 En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado, el `styles.css` y el `scripts.js`.
