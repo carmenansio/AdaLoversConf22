@@ -3,6 +3,15 @@
 
 En este tutorial veremos conceptos básico de HTML, CSS y JS. Tocaremos transiciones, data-attributes, flexbox... no hace falta ser una experta para seguir este tutorial, si sabéis que estos lenguajes web existen, es todo lo que se necesita 🤘
 
+### 👏 Diseño y Desarrollo
+
+La interfaz del juego se ha diseñado en `Figma` 
+//TODO añadir la URL del archivo subido a `Figma Community`
+
+![Diseño del tablero](./memory-game/assets/figma-board.png)
+![Diseño de los items](./memory-game/assets/figma-items.png)
+
+
 ### 🏗 Arquitectura de archivos
 
 Estos son los archivos necesarios para nuestro proyecto:
