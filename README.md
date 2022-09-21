@@ -3,6 +3,8 @@
 
 En este tutorial veremos conceptos básico de HTML, CSS y JS. Tocaremos transiciones, data-attributes, flexbox... no hace falta ser una experta para seguir este tutorial, si sabéis que estos lenguajes web existen, es todo lo que se necesita 🤘
 
+(PD: vamos a jugar con `vanilla` tanto en `css` como en `js`. No utilizaremos ni precompiladores como `SASS`, ni frameworks como `Tailwind`, ni tipado con `TypeScript`.)
+
 ### 👏 Diseño y Desarrollo
 
 La interfaz del juego se ha diseñado en `Figma` 
