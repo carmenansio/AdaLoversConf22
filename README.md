@@ -1,4 +1,5 @@
-## 💃 AdaLoversConf22-WIP
+## 💃 AdaLoversConf22
+### 🎁 Repositorio del Workshop "Desarrolla tu primer videojuego"
 
 En este tutorial veremos conceptos básico de HTML, CSS y JS. Tocaremos transiciones, data-attributes, flexbox... no hace falta ser una experta para seguir este tutorial, si sabéis que estos lenguajes web existen, es todo lo que se necesita 🤘
 
