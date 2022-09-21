@@ -192,14 +192,18 @@ function flipCard() {
 cards.forEach(card => card.addEventListener('click', flipCard));
 ```
 
-In the CSS the flip class rotates the card 180deg:
+La clase `.flip` rota la carta `180deg`:
 
 ```
 .memory-card.flip {
   transform: rotateY(180deg);
 }
 ```
-To produce the 3D flip effect, we will add the perspective property to `.memory-game`. That property sets how far in the `z` plane the object is from the user. The lower the value the bigger the perspective effect. For a subtle effect, let’s apply `1000px`:
+
+Para producir el `efecto 3D`, añadimos una propiedad de perspectiva a la clase `.memory-game`. Esta propiedad define cuanto de lejos en el plano de `a` el objeto se alejará de nuestra vista.
+
+
+Para un efecto `subtle` aplicamos a la perspectiva un valor de `1000px`:
 
 ```
 /* styles.css */
@@ -245,7 +249,9 @@ Now, a transition has to be applied to the `transform` property to produce the m
 }
 ```
 ### 🌍 3D flip
-So, we got the card to 3D flip, yay! But why isn’t the card face showing up? Right now, both .front-face and .back-face are stacked up onto each other, because they are absolutely positioned. Every element has a back face, which is a mirror image of its front face. The property backface-visibility defaults to visible, so when we flip the card, what we get is the JS badge back face.
+So, we got the card to 3D flip, yay! But why isn’t the card face showing up?
+
+Right now, both .front-face and `.back-face` are stacked up onto each other, because they are absolutely positioned. Every element has a back face, which is a mirror image of its front face. The property `backface-visibility` defaults to visible, so when we flip the card, what we get is the JS badge `back-face`.
 
 //TODO añadir animacion de carta girando
 
@@ -260,13 +266,13 @@ To reveal the image underneath it, let’s apply `backface-visibility: hidden` t
   height: 100%;
   padding: 20px;
   position: absolute;
-  border-radius: 5px;
-  background: #1C7CCC;
+  border-radius: 10px;
+  border: 3px solid var(--border);
   backface-visibility: hidden;
 }
 ```
 
-Since we’ve hidden both images back face, there is nothing in the other side. So now we have to turn the `.front-face` 180 degrees:
+Since we’ve hidden both images back face, there is nothing in the other side. So now we have to turn the `.front-face` `180` grados:
 
 ```
 .front-face {
@@ -274,9 +280,9 @@ Since we’ve hidden both images back face, there is nothing in the other side. 
 }
 ```
 
-And now, there’s the desired flip effect!
+Ya lo tenemos!
 
-//TODO animación giro cartas
+//TODO añadir gif con la animación del giro de cartas
 
 
 ### 🧩 Assets para nuestro jueguico
@@ -286,6 +292,6 @@ And now, there’s the desired flip effect!
 
 ### 🏴‍☠️ Enlace del jueguico en codepen
 - Proyecto en [codepen](https://codepen.io/carmenansio/pen/OJZMBwq/c9a3da5deb777c337616360afb27e8a2)
-### 👾 Enlaces con Jueguitos Web
+### 👾 Gente que hace Jueguitos Web
 - Jamie-Coulter en [codepen](https://trost.notion.site/trost/Jamie-Coulter-s-CodePen-Gameshttps-codepen-io-jcoulterdesign-full-NeOQzX-1827d229ceea47cea1255c195c95d78d)
 - Alvaro Montoro [CSSimon](https://codepen.io/alvaromontoro/pen/BaxKqwO)
