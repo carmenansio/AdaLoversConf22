@@ -81,8 +81,7 @@ Un poco de teoría:
 
 - El modelo de caja 'box-sizing': La propiedad `border-box` incluye los padding y valores de borders dentro del tamaño total del elemento, width y height. Así simplificamos los cálculos.
 
-// TODO
-- Indicando al body que tenga un `display: flex` y un `margin: auto` a la clase .memory-game que actua como contenedo, creamo una alineación vertical y horaizontal.
+- Indicando al body que tenga un `display: flex` a la clase .memory-game que actua como contenedor, creamos una alineación vertical y horizontal.
 
 - La clase `.memory-game` también será un contenedor con comportamiento `flex-container`. Por defecto, los elementos vienen seteados con `shrink` en lo ancho para ajustarse al contenedor. Seteando `flex-wrap` con el valor `wrap`, los `flex-items` se wrapearan a lo largo de multiples lineas dependiendo de su propio tamaño.
 

@@ -1,7 +1,9 @@
 /* variables.css */
 
 :root {
-  --fill: #fc93e4;
+  --fill-front: #fc93e4;
+  --fill-back: #ffffff;
+  --border: #000000;
 }
 
 /* reset.css */
@@ -55,11 +57,16 @@ body {
   height: 100%;
   padding: 20px;
   position: absolute;
-  border-radius: 5px;
-  background-color: var(--fill);
+  border-radius: 10px;
+  border: 3px solid var(--border);
   backface-visibility: hidden;
 }
 
 .front-card {
   transform: rotateY(180deg);
+  background-color: var(--fill-front);
+}
+
+.back-card {
+  background-color: var(--fill-back);
 }
