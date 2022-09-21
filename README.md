@@ -173,9 +173,13 @@ body {
 ```
 
 ### 🩴 Flip card
-To flip the card when clicked, a class flip will be added to the element. For that, let’s select all memory-card elements with `document.querySelectorAll`, loop through them with forEach and attach an event listener. 
-Every time a card gets clicked flipCard function will be fired. The this variable represents the card that was clicked. 
-The function accesses the element’s classList and toggles the flip class:
+//TODO estudiar bien esta parte
+Para crear el efecto de voltear la carta cada vez que sea clicada, vamos a añadir la clase `.flip`. Con un `document.querySelectorAll` seleccionamos todos los elementos del contenedor `memory-card` con `document.querySelectorAll`, se genera un loop con cada `forEach` y le atacha un `event listener`. 
+
+Cada vez que una carta sea clicada la `función flipCard` será ejecutada.
+La variable `this` representa que la carta ha sido clicada. 
+
+La `function` accede a los elementos de `classList` y hace un `toggles` a la `flip class`:
 
 ```
 // scripts.js
