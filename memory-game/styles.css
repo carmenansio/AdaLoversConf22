@@ -1,4 +1,4 @@
-/* variables.css */
+/* variables */
 
 :root {
   --fill-front: #795548;
@@ -6,7 +6,7 @@
   --border: #000000;
 }
 
-/* reset.css */
+/* reset */
 
 * {
   padding: 0;
@@ -14,7 +14,7 @@
   box-sizing: border-box;
 }
 
-/* styles.css */
+/* styles */
 
 body {
   height: 100vh;
