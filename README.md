@@ -191,7 +191,7 @@ Para crear el efecto de voltear la carta cada vez que sea clicada, vamos a añad
 Cada vez que una carta sea clicada la `función flipCard` será ejecutada.
 La variable `this` representa que la carta ha sido clicada. 
 
-La `function` accede a los elementos de `classList` y hace un `toggles` a la `flip class`:
+La función `flipCard()` accede a los elementos de `classList` y hace un `toggles` a la `flip class`:
 
 ```
 // scripts.js
