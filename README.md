@@ -8,7 +8,7 @@ En este tutorial veremos conceptos básico de `HTML`, `CSS` y `JS`. Tocaremos `t
 ### 👏 Diseño y Desarrollo
 
 La interfaz del juego se ha diseñado en `Figma` 
-//TODO añadir la URL del archivo subido a `Figma Community`
+<!-- TODO añadir la URL del archivo subido a `Figma Community` -->
 
 ![Diseño del tablero](./memory-game/assets/figma-board.png)
 ![Diseño de los items](./memory-game/assets/figma-items.png)
@@ -31,6 +31,8 @@ En la consola:
 
 ### 🍱 Cositas en nuestro HTML
 En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado, el `styles.css` y el `scripts.js`.
+
+<!-- TODO donde posicionamos cada archivo linkado y xq -->
 
 ```
 <!-- index.html -->
@@ -145,7 +147,7 @@ La propiedad `position: absolute` está indicada a ambas caras de las cartas `.f
 }
 ```
 
-//TODO añadir pantallazo de este estado
+<!-- TODO añadir pantallazo de este estado -->
 
 ### 🍿 Animando el cotarro
 Vamos a añadir una micro interacción que simulará un `efecto click`. La pseudo clase `:active` actuará de trigger cada vez que el elemento sea clicado y aplicará una animación al tamaño de la carta con `.2s transition`.
@@ -185,7 +187,7 @@ body {
 ```
 
 ### 🩴 Flip card
-//TODO estudiar bien esta parte
+<!-- TODO estudiar bien esta parte -->
 Para crear el efecto de voltear la carta cada vez que sea clicada, vamos a añadir la clase `.flip`. Con un `document.querySelectorAll` seleccionamos todos los elementos del contenedor `memory-card` con `document.querySelectorAll`, se genera un loop con cada `forEach` y le atacha un `event listener`. 
 
 Cada vez que una carta sea clicada la `función flipCard` será ejecutada.
@@ -265,7 +267,7 @@ So, we got the card to 3D flip, yay! But why isn’t the card face showing up?
 
 Right now, both .front-face and `.back-face` are stacked up onto each other, because they are absolutely positioned. Every element has a back face, which is a mirror image of its front face. The property `backface-visibility` defaults to visible, so when we flip the card, what we get is the JS badge `back-face`.
 
-//TODO añadir animacion de carta girando
+<!-- TODO añadir animacion de carta girando -->
 
 To reveal the image underneath it, let’s apply `backface-visibility: hidden` to `.front-face` and `.back-face`.
 
@@ -294,7 +296,7 @@ Since we’ve hidden both images back face, there is nothing in the other side. 
 
 Ya lo tenemos!
 
-//TODO añadir gif con la animación del giro de cartas
+<!-- TODO añadir gif con la animación del giro de cartas -->
 
 
 ### 🧩 Assets para nuestro jueguico
