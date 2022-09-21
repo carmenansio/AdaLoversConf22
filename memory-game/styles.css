@@ -2,6 +2,7 @@
 
 :root {
   --fill-front: #fc93e4;
+  --fill-front: #795548;
   --fill-back: #ffffff;
   --border: #000000;
 }
@@ -43,7 +44,7 @@ body {
 }
 
 .memory-card:active {
-  transform: scale(0.97);
+  transform: scale(0.8);
   transition: transform .2s;
 }
 
