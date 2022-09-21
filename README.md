@@ -78,7 +78,7 @@ Utilizaremos un reset muy básico pero efectivo 👇
 }
 ```
 
-Un poco de teoría:
+ℹ️ Un poco de teoría:
 
 - El modelo de caja 'box-sizing': La propiedad `border-box` incluye los padding y valores de borders dentro del tamaño total del elemento, width y height. Así simplificamos los cálculos.
 
