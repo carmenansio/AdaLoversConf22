@@ -1,7 +1,7 @@
 /* variables */
 
 :root {
-  --fill-front: #795548;
+  --fill-front: #FC93E4;
   --fill-back: #ffffff;
   --border: #000000;
 }
@@ -64,7 +64,7 @@ body {
 
 .front-card {
   transform: rotateY(180deg);
-  background-color: var(--fill-front);
+  background: var(--fill-front);
 }
 
 .back-card {
