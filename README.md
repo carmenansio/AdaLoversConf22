@@ -344,18 +344,28 @@ También cambiamos el método `toggle` para agregar:
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 ```
+//por aquí
 So now, when the user clicks the second card, we will fall into the else block in our condition. We will check to see if it’s a match. In order to do that, let’s identify each card.
 
-Whenever we feel like adding extra information to HTML elements, we can make use of data attributes. By using the following syntax: data-*, where, * can be any word, that attribute will be inserted in the element’s dataset property. So, let’s add a `data-item` to each card:
+Entonces, cuando el usuario hace clic en la segunda carta, entramos en el bloque `else` de nuestra `condition`. Así que necesitamos comprobar si hay un `match` para poder hacer esto, tenemos que identificar cada una de las cartas.
+
+Cuando necesitemos añadir información extra a los elementos de nuestro `HTML`, podemos utilizar los atributos de datos `data attributes`. 
+Lo haremos utilizando la siguiente sintaxis: 
+Data- *, donde, * puede ser cualquier palabra, ese atributo se insertará en la propiedad del conjunto de datos del elemento. 
+Ahora, vamos a añadir un `data-item` a cada carta:
 
 ```
 <!-- index.html -->
 
 + <div class="memory-card" data-item="star">
 ```
-So now we can check for a match by accessing both cards dataset. Let’s extract the matching logic to its own method checkForMatch() and also set hasFlippedCard back to false. In case of a match, disableCards() is invoked and the event listeners on both cards are detached, to prevent further flipping. Otherwise, unflipCards() will turn both cards back by a 1500ms timeout that removes the .flip class:
 
-Putting all together:
+Ya podemos verificar una coincidencia accediendo a ambos conjuntos de datos de tarjetas. 
+Podemos extraer la lógica coincidente a su propio método `checkForMatch()` y también establecer de nuevo a `false` el `hasFlippedCard`. 
+En el caso de una coincidencia, se invoca a `disableCards()` y los `listeners` del evento en ambas tarjetas se separan, para evitar más giros. 
+De lo contrario, `unflipCards()` devolverá ambas tarjetas con un tiempo de espera de `1500ms` (`timeout`) que elimina la clase `.flip`:
+
+### ⚡️ Fusiiiiiiiiión-ando todo:
 
 ```
 <!-- scripts.js -->
@@ -404,8 +414,13 @@ const cards = document.querySelectorAll('.memory-card');
   cards.forEach(card => card.addEventListener('click', flipCard));
 
 ```
-### 🎩 Con un ternarío 
-A more elegant way of writing the matching condition is to use a ternary operator. It’s composed by three blocks. The first block is the condition to be evaluated. The second block is executed if the condition returns true, otherwise the executed block is the third:
+### 🎩 Con un ternarío
+Una forma más elegante de escribir la condición de `match` es usar un operador ternario.
+
+Está compuesto por tres bloques:
+1️⃣ El primer bloque es la condición a evaluar. 
+2️⃣ El segundo bloque se ejecuta si la condición devuelve verdadera. 
+3️⃣ De lo contrario el bloque ejecutado es el tercero:
 
 ```
 <!-- scripts.js -->
