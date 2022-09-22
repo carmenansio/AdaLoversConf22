@@ -1,30 +1,31 @@
-## 💃 AdaLoversConf22
-👋 Hola!! Las slides del Workshop las tenéis [aquí](./memory-game/assets/slides/slides.pdf)
+# 💃 AdaLoversConf22
+👋 Hola!! Las **slides** del Workshop las tenéis [aquí](./memory-game/assets/slides/slides.pdf)
 ### 🎁 Repositorio del Workshop "Desarrolla tu primer videojuego"
 
-En este tutorial veremos conceptos básico de `HTML`, `CSS` y `JS`. Tocaremos `transiciones`, `data-attributes`, `flexbox`... no hace falta ser una experta para seguir este tutorial, si sabéis que estos lenguajes web existen, es todo lo que se necesita 🤘.
+En este tutorial veremos conceptos básico de `HTML`, `CSS` y `JS`. Tocaremos `transiciones`, `data-attributes`, `flexbox`...**no hace falta ser una experta** para seguir este tutorial, si sabéis que estos lenguajes web existen, es todo lo que se necesita 🤘.
 
-(PD: vamos a jugar con `vanilla` tanto en `css` como en `js`. No utilizaremos ni precompiladores como `SASS`, ni frameworks como `Tailwind`,ni `TypeScript`.)
+(PD: vamos a jugar con `vanilla` tanto en `css` como en `js`. **No utilizaremos** ni precompiladores como `SASS`, ni frameworks como `Tailwind`,ni `TypeScript`.)
 
 ![Super Mario Bros 3 intro](./memory-game/assets/media/intro.gif)
 
 ### 👏 Diseño y Desarrollo
 
-La interfaz del juego se ha diseñado en `Figma` 👇
+La **interfaz del juego** se ha diseñado en `Figma`. Cada `item` es un componente con `variants` 👇
+
 ![Diseño del tablero](./memory-game/assets/figma-board.png)
 ![Diseño de los items](./memory-game/assets/figma-items.png)
 
 
 ### 🏗 Arquitectura de archivos
 
-Estos son los archivos necesarios para nuestro proyecto:
+Estos son los **archivos necesarios** para nuestro proyecto:
 
 1. Creamos la carpeta de `memory-game`
 2. Entramos en la carpeta creada
 3. Dentro generamos los archivos `index.html` `styles.css` `scripts.js`
 4. Creamos la carpeta `assets` 
 
-En la consola:
+##### Cómo crear los archivos directamente en la consola:
 - 1️⃣  mkdir memory-game
 - 2️⃣  cd memory-game
 - 3️⃣  touch index.html styles.css scripts.js
@@ -62,13 +63,14 @@ Creamos el layout principal con un tag `section` en la estructura del `html`.
 ![Board front](https://assets.codepen.io/527512/board-front.png)
 
 ### 🧩 Assets para nuestro jueguico
-- Los assets originales los podéis encontrar en mi perfil de Community de Figma
+- Los assets originales los podéis encontrar en mi **perfil de Community de Figma**
 - En la carpeta assets en formato `.png` y `.svg`
 - `SVGOMG` para optimizar los `.svg`
+- `ImageOptim` para optimizar las imágenes
 
 ### 🃏 Nuestro jueguico de cartas
-El juego tiene 18 cartas, cada una está creada por un `div` contenedor que hemos llamado `.memory-card`, el cuál tiene dos imágenes `SVG`. 
-La primera imágen será la cara frontal `front-card` y la segunda será común a todas, con el logo original de Nintendo cómo `back-card`.
+El juego consta de **18 cartas**, cada una está creada por un `div` contenedor que hemos llamado `.memory-card`, el cuál tiene **dos imágenes** `SVG`. 
+La primera imágen será la cara frontal `front-card` y **la segunda será común** a todas, con el logo original de **Nintendo** cómo `back-card`.
 
 ```
 <!-- styles.css -->
@@ -87,7 +89,7 @@ La primera imágen será la cara frontal `front-card` y la segunda será común 
 ```
 
 ### 💣 CSS al ataque
-Utilizaremos un reset muy básico pero efectivo 👇
+Utilizaremos un **reset** muy básico pero **efectivo** 👇
 
 ```
 <!-- styles.css -->
@@ -100,11 +102,11 @@ Utilizaremos un reset muy básico pero efectivo 👇
 }
 ```
 
-ℹ️ Un poco de teoría:
+ℹ️ **Un poco de teoría**:
 
-- El modelo de caja 'box-sizing': La propiedad `border-box` incluye los padding y valores de borders dentro del tamaño total del elemento, width y height. Así simplificamos los cálculos.
+- El modelo de caja `box-sizing`: La propiedad `border-box` incluye los padding y valores de borders **dentro del tamaño total del elemento**, width y height. 🧮 Así **simplificamos los cálculos**.
 
-- Indicando al body que tenga un `display: flex` a la clase .memory-game que actua como contenedor, creamos una alineación vertical y horizontal.
+- Indicando al `body` que tenga un `display: flex` a la clase `.memory-game` que actua cómo contenedor, creamos una alineación vertical y horizontal.
 
 - La clase `.memory-game` también será un contenedor con comportamiento `flex-container`. Por defecto, los elementos vienen seteados con `shrink` en lo ancho para ajustarse al contenedor. Seteando `flex-wrap` con el valor `wrap`, los `flex-items` se posicionará  a lo largo de multiples lineas dependiendo de su propio tamaño.
 
@@ -126,9 +128,10 @@ body {
 }
 ```
 ### 🍍 Dando estilo a nuestro jueguico
-La altura y el ancho de cada carta está calculado con la función `calc()` de `CSS`, hemos creado `3 filas`, con `6 cartas` en cada fila con un `16.6%` y una altura de `33.3%` y restamos 10px para añadir el margen entre cartas.
+La altura y el ancho de cada carta está calculado con la función `calc()` de `CSS`, hemos creado `3 filas`, con **6 cartas en cada fila** con un `16.6%` y una altura de `33.3%` y **restamos 10px** para añadir el margen entre cartas.
 
-Para poder posicionar los "hijos" del contenedor `.memory-card`, hemos añadido la propiedad `position: relative`, para poder posicionar los hijos de manera absoluta `position: absolute` relativa al contenedor 'madre'.
+Para poder posicionar los **hijos** del contenedor `.memory-card`, hemos añadido la propiedad `position: relative`, para poder posicionarlos de manera absoluta `position: absolute` y sean relativos al contenedor **madre**. 👇
+**❓ ¿Se entiende este comportamiento?**
 
 La propiedad `position: absolute` está indicada a ambas caras de las cartas `.front-card` y `.back-card` esto hará que los elementos salgan de su flujo normal y se posicionen una cara sobre otra.
 
@@ -175,9 +178,9 @@ Vamos a añadir una micro interacción que simulará un `efecto click`. La pseud
  ```
 
 ### 👋 Añadir cursor custom
-Hemos añadido la manita de Mario como cursor para simular que es él quién está seleccionando las cartas.
+Hemos añadido la **manita de Mario** como cursor para simular que es él quién está seleccionando las cartas.
 
-Podemos crear un cursor custom con la siguiente linea de código:
+Podemos **crear un cursor custom** con la siguiente linea de código👇
 
 ```
 <!-- styles.css -->
@@ -187,9 +190,7 @@ body {
   display: flex;
   cursor: url('./assets/cursor.cur'), auto;
 }
-
 ```
-
 ### 🩴 Flip card
 Para crear el efecto de voltear la carta cada vez que sea clicada, vamos a añadir la clase `.flip`. Con un `document.querySelectorAll` seleccionamos todos los elementos del contenedor `memory-card` se genera un loop con cada `forEach` y le atacha un `event listener`. 
 
@@ -391,15 +392,17 @@ A more elegant way of writing the matching condition is to use a ternary operato
 ```
 <!-- scripts.js -->
 
-- if (firstCard.dataset.name === secondCard.dataset.name) {
--   disableCards();
--   return;
-- }
--
-- unflipCards();
+if (firstCard.dataset.name === secondCard.dataset.name) {
+  disableCards();
+  return;
+}
 
-+ let isMatch = firstCard.dataset.name === secondCard.dataset.name;
-+ isMatch ? disableCards() : unflipCards();
+unflipCards();
+
+<!-- añadimos estas dos líneas -->
+let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+isMatch ? disableCards() : unflipCards();
+
 ```
 ## 💎 Corner cases
 ### Lock Board
