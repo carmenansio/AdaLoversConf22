@@ -89,7 +89,7 @@ La primera imágen será la cara frontal `front-card` y la segunda será común 
 </div>
 ```
 
-### 🍍 Dando estilo a nuestro jueguico
+### 💣 CSS al ataque
 
 Utilizaremos un reset muy básico pero efectivo 👇
 
