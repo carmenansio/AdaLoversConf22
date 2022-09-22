@@ -4,15 +4,13 @@
 
 En este tutorial veremos conceptos básico de `HTML`, `CSS` y `JS`. Tocaremos `transiciones`, `data-attributes`, `flexbox`... no hace falta ser una experta para seguir este tutorial, si sabéis que estos lenguajes web existen, es todo lo que se necesita 🤘.
 
-(PD: vamos a jugar con `vanilla` tanto en `css` como en `js`. No utilizaremos ni precompiladores como `SASS`, ni frameworks como `Tailwind`, ni tipado con `TypeScript`.)
+(PD: vamos a jugar con `vanilla` tanto en `css` como en `js`. No utilizaremos ni precompiladores como `SASS`, ni frameworks como `Tailwind`,ni `TypeScript`.)
 
-![Super Mario Bros 3 intro](./memory-game/assets/intro.gif)
+![Super Mario Bros 3 intro](./memory-game/assets/media/intro.gif)
 
 ### 👏 Diseño y Desarrollo
 
-La interfaz del juego se ha diseñado en `Figma` 
-<!-- TODO añadir la URL del archivo subido a `Figma Community` -->
-
+La interfaz del juego se ha diseñado en `Figma` 👇
 ![Diseño del tablero](./memory-game/assets/figma-board.png)
 ![Diseño de los items](./memory-game/assets/figma-items.png)
 
@@ -35,8 +33,6 @@ En la consola:
 ### 🍱 Cositas en nuestro HTML
 En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado, el `styles.css` y el `scripts.js`.
 
-<!-- TODO donde posicionamos cada archivo linkado y xq -->
-
 ```
 <!-- index.html -->
 <!DOCTYPE html>
@@ -55,9 +51,10 @@ En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado,
 ```
 
 ### 🍱 Layout principal
+Creamos el layout principal con un tag `section` en la estructura del `html`.
 
 ```
-<!-- styles.css -->
+<!-- index.html -->
 <section class="memory-game"></section>
 ```
 
@@ -67,7 +64,7 @@ En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado,
 ### 🧩 Assets para nuestro jueguico
 - Los assets originales los podéis encontrar en mi perfil de Community de Figma
 - En la carpeta assets en formato `.png` y `.svg`
-- SVGOMG para optimizar los `.svg`
+- `SVGOMG` para optimizar los `.svg`
 
 ### 🃏 Nuestro jueguico de cartas
 El juego tiene 18 cartas, cada una está creada por un `div` contenedor que hemos llamado `.memory-card`, el cuál tiene dos imágenes `SVG`. 
@@ -90,7 +87,6 @@ La primera imágen será la cara frontal `front-card` y la segunda será común 
 ```
 
 ### 💣 CSS al ataque
-
 Utilizaremos un reset muy básico pero efectivo 👇
 
 ```
@@ -156,12 +152,10 @@ La propiedad `position: absolute` está indicada a ambas caras de las cartas `.f
   border: 3px solid var(--border);
 }
 ```
-
-<!-- TODO añadir pantallazo de este estado -->
+![Board Nintendo](./memory-game/assets/board-nintendo.png)
 
 ### 🍿 Animando el cotarro
 Vamos a añadir una micro interacción que simulará un `efecto click`. La pseudo clase `:active` actuará de trigger cada vez que el elemento sea clicado y aplicará una animación al tamaño de la carta con `.2s transition`. A la clase `.memory-card` le añadimos un `transform: scale(1)`.
-
 
 ```
 <!-- styles.css -->
@@ -197,7 +191,6 @@ body {
 ```
 
 ### 🩴 Flip card
-<!-- TODO estudiar bien esta parte -->
 Para crear el efecto de voltear la carta cada vez que sea clicada, vamos a añadir la clase `.flip`. Con un `document.querySelectorAll` seleccionamos todos los elementos del contenedor `memory-card` se genera un loop con cada `forEach` y le atacha un `event listener`. 
 
 Cada vez que una carta sea clicada la `función flipCard` será ejecutada.
@@ -278,8 +271,6 @@ So, we got the card to 3D flip, yay! But why isn’t the card face showing up?
 
 Right now, both .front-face and `.back-face` are stacked up onto each other, because they are absolutely positioned. Every element has a back face, which is a mirror image of its front face. The property `backface-visibility` defaults to visible, so when we flip the card, what we get is the JS badge `back-face`.
 
-<!-- TODO añadir animacion de carta girando -->
-
 To reveal the image underneath it, let’s apply `backface-visibility: hidden;` to `.front-face` and `.back-face`.
 
 ```
@@ -309,7 +300,7 @@ Since we’ve hidden both images back face, there is nothing in the other side. 
 
 Ya tenemos controlado el giro!
 
-<!-- TODO añadir gif con la animación del giro de cartas -->
+![Giro de la carta](./memory-game/assets/media/flip-card.mov)
 
 ### 🧡 Encontrando la media naranja
 When we click the first card, it needs to wait until another card is flipped. The variables hasFlippedCard and flippedCard will manage the flip state. In case there is no card flipped, hasFlippedCard is set to true and flippedCard is set to the clicked card. Let’s also switch the toggle method to add:
