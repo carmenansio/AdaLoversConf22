@@ -436,10 +436,8 @@ Está compuesto por tres bloques:
 + isMatch ? disableCards() : unflipCards();
 ```
 ## 💎 Corner cases
-### Lock Board
-So now that we have the matching logic covered, we need to lock the board. We lock the board to avoid two sets of cards being turned at the same time, otherwise the flipping will fail.
-
-Let’s declare a lockBoard variable. When the player clicks the second card, lockBoard will be set to true and the condition if (lockBoard) return; will prevent any card flipping before the cards are hidden or match:
+### Bloquear el tablero
+Ahora ya tenemos la logica de emparejamiento, vamos a bloquear el tablero para evitar que dos juegos de cartas se giren al mismo tiempo, de lo contrario nuestro giro fallaría.
 
 ```
 <!-- scripts.js -->
@@ -490,10 +488,10 @@ const cards = document.querySelectorAll('.memory-card');
   cards.forEach(card => card.addEventListener('click', flipCard));
 ```
 
-### Same Card Click
-The is still the case where the player can click twice on the same card. The matching condition would evaluate to true, removing the event listener from that card.
-
-To prevent that, let’s check if the current clicked card is equal to the firstCard and return if positive.
+### Clicar dos veces en la misma carta
+Ya sabemos que cómo usuarias, somos expertas en liarla. Y sigue habiendo la posibilidad de clicar dos veces en la misma carta. 
+La condición de correspondencia se evaluaría como `true`, eliminando el `listener` del evento de esa carta. 
+Para evitar este comporatemiento, vamos a verificar si la carta actualizada actual es igual a la `firstCard` y que regrese si es positiva.
 
 ```
 <!-- scripts.js -->
@@ -501,8 +499,13 @@ To prevent that, let’s check if the current clicked card is equal to the first
 if (this === firstCard) return;
 ```
 
-The `firstCard` and `secondCard` variables need to be reset after each round, so let’s extract that to a new method `resetBoard()`. Let’s place the `hasFlippedCard = false;` and `lockBoard = false` there too. The es6 destructuring assignment `[var1, var2] = ['value1', 'value2']`, allows us to keep the code super short:
+Las variables de `firstCard` y `secondCard` variables necesitan ser reseteadas después de cada ronda de juego, así que vamos a extraer esta lógica a un nuevo método `resetBoard()`. 
+Seteamos las `hasFlippedCard = false;` y `lockBoard = false`. 
+La *es6 destructuring assignment* `[var1, var2] = ['value1', 'value2']`, nos permite a mantener nuestro código super simple:
 
+ℹ️ (Con **es6** nos referimos al estándar que ya va por la versión ES6 y determina cómo emplear el lenguaje Javascript)
+
+ℹ️ (Destructuring assignment es una sintaxis especial de ECMAScript 6 que nos permite **desempaquetar** `arrays` o `objects` en un montón de variables)
 ```
 <!-- scripts.js -->
 
@@ -512,7 +515,7 @@ function resetBoard() {
 }
 ```
 
-The new method will be called both from `disableCards()` and `unflipCards()`:
+El nuevo método será llamado por ambas `disableCards()` y `unflipCards()`:
 
 ```
 <!-- scripts.js -->
@@ -573,18 +576,26 @@ const cards = document.querySelectorAll('.memory-card');
   cards.forEach(card => card.addEventListener('click', flipCard));
 ```
 ### Shuffling
-Our game looks pretty good, but there is no fun if the cards are not shuffled, so let’s take care of that now.
+Nuestro juego se ve bastante bien, pero no hay diversión si las cartas no se barajan, así que vamos a revisar esta parte.
 
-When display: flex is declared on the container, flex-items are arranged by the following hierarchy: group and source order. Each group is defined by the order property, which holds a positive or negative integer. By default, each flex-item has its order property set to 0, which means they all belong to the same group and will be laid out by source order. If there is more than one group, elements are firstly arranged by ascending group order.
+Cuándo `display: flex` está declarado en el contenedor, los `flex-item` están organizados por la siguiente jerarquía: 
+- Grupo
+- Orden de origen
 
-There is 12 cards in the game, so we will iterate through them, generate a random number between 0 and 12 and assign it to the flex-item order property:
+Cada grupo está definido por la propiedad orden, que posee un número positivo entero o negativo.
+
+De manera predeterminada, cada `flex-item` tiene su propiedad de orden establecida en 0, lo que significa que todas las cartas de la barajan pertenecen al mismo grupo y se presentarán por orden de origen.
+
+Si hay más de un grupo, los elementos se organizan en primer lugar mediante el orden grupal ascendente.
+
+Hay **16 cartas** en este juego, vamos a iterar entre ellas, **generando un número random** entre 0 y 16 y asignandolo a la propiedad de orden del `flex-item`:
 
 ```
 <!-- scripts.js -->
 
 function shuffle() {
   cards.forEach(card => {
-    let ramdomPos = Math.floor(Math.random() * 12);
+    let ramdomPos = Math.floor(Math.random() * 16);
     card.style.order = ramdomPos;
   });
 }
@@ -646,7 +657,7 @@ const cards = document.querySelectorAll('.memory-card');
 
 + (function shuffle() {
 +   cards.forEach(card => {
-+     let ramdomPos = Math.floor(Math.random() * 12);
++     let ramdomPos = Math.floor(Math.random() * 16);
 +     card.style.order = ramdomPos;
 +   });
 + })();
