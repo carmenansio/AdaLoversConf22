@@ -6,6 +6,8 @@ En este tutorial veremos conceptos básico de `HTML`, `CSS` y `JS`. Tocaremos `t
 
 (PD: vamos a jugar con `vanilla` tanto en `css` como en `js`. No utilizaremos ni precompiladores como `SASS`, ni frameworks como `Tailwind`, ni tipado con `TypeScript`.)
 
+![Super Mario Bros 3 intro](./memory-game/assets/intro.gif)
+
 ### 👏 Diseño y Desarrollo
 
 La interfaz del juego se ha diseñado en `Figma` 
@@ -55,6 +57,7 @@ En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado,
 ### 🍱 Layout principal
 
 ```
+<!-- styles.css -->
 <section class="memory-game"></section>
 ```
 
@@ -71,6 +74,7 @@ El juego tiene 18 cartas, cada una está creada por un `div` contenedor que hemo
 La primera imágen será la cara frontal `front-card` y la segunda será común a todas, con el logo original de Nintendo cómo `back-card`.
 
 ```
+<!-- styles.css -->
 <div class="memory-card">
   <img
     class="front-card"
@@ -90,7 +94,8 @@ La primera imágen será la cara frontal `front-card` y la segunda será común 
 Utilizaremos un reset muy básico pero efectivo 👇
 
 ```
-/* reset.css */
+<!-- styles.css -->
+/* reset */
 
 * {
   padding: 0;
@@ -108,7 +113,7 @@ Utilizaremos un reset muy básico pero efectivo 👇
 - La clase `.memory-game` también será un contenedor con comportamiento `flex-container`. Por defecto, los elementos vienen seteados con `shrink` en lo ancho para ajustarse al contenedor. Seteando `flex-wrap` con el valor `wrap`, los `flex-items` se posicionará  a lo largo de multiples lineas dependiendo de su propio tamaño.
 
 ```
-/* styles.css */
+<!-- styles.css -->
 
 body {
   height: 100vh;
@@ -132,7 +137,7 @@ Para poder posicionar los "hijos" del contenedor `.memory-card`, hemos añadido 
 La propiedad `position: absolute` está indicada a ambas caras de las cartas `.front-card` y `.back-card` esto hará que los elementos salgan de su flujo normal y se posicionen una cara sobre otra.
 
 ```
-/* styles.css */
+<!-- styles.css -->
 
 .memory-card {
   width: calc(16.666% - 10px);
@@ -159,6 +164,8 @@ Vamos a añadir una micro interacción que simulará un `efecto click`. La pseud
 
 
 ```
+<!-- styles.css -->
+
 .memory-card {
   width: calc(16.666% - 10px);
   height: calc(33.333% - 10px);
@@ -179,7 +186,7 @@ Hemos añadido la manita de Mario como cursor para simular que es él quién est
 Podemos crear un cursor custom con la siguiente linea de código:
 
 ```
-/* styles.css */
+<!-- styles.css -->
 
 body {
   height: 100vh;
@@ -199,7 +206,8 @@ La variable `this` representa que la carta ha sido clicada.
 La función `flipCard()` accede a los elementos de `classList` y hace un `toggles` a la `flip class`:
 
 ```
-// scripts.js
+<!-- scripts.js -->
+
 const cards = document.querySelectorAll('.memory-card');
 
 function flipCard() {
@@ -223,7 +231,7 @@ Para producir el `efecto 3D`, añadimos una propiedad de perspectiva a la clase 
 Para un efecto `subtle` aplicamos a la perspectiva un valor de `1000px` añadiendo a la clase `.memory-game` la propiedad `perspective: 1000px;`:
 
 ```
-/* styles.css */
+<!-- styles.css -->
 
 .memory-game {
    width: 100vw;
@@ -239,7 +247,7 @@ To the `.memory-card` elements let’s add `transform-style: preserve-3d`, to po
 Añadiendo la propiedad `transform-style: preserve-3d;`
 
 ```
-/* styles.css */
+<!-- styles.css -->
 
 .memory-card {
   width: calc(16.666% - 10px);
@@ -253,7 +261,7 @@ Añadiendo la propiedad `transform-style: preserve-3d;`
 Aplicamos una transición con la propiedad `transition: transform .5s;` para producir el efecto de movimiento:
 
 ```
-/* styles.css */
+<!-- styles.css -->
 
 .memory-card {
   width: calc(16.666% - 10px);
@@ -275,7 +283,7 @@ Right now, both .front-face and `.back-face` are stacked up onto each other, bec
 To reveal the image underneath it, let’s apply `backface-visibility: hidden;` to `.front-face` and `.back-face`.
 
 ```
-/* styles.css */
+<!-- styles.css -->
 
 .front-face,
 .back-face {
@@ -292,6 +300,8 @@ To reveal the image underneath it, let’s apply `backface-visibility: hidden;` 
 Since we’ve hidden both images back face, there is nothing in the other side. So now we have to turn the `.front-face` `180` grados con la propiedad `transform: rotateY(180deg);`:
 
 ```
+<!-- styles.css -->
+
 .front-face {
   transform: rotateY(180deg);
 }
@@ -305,6 +315,8 @@ Ya tenemos controlado el giro!
 When we click the first card, it needs to wait until another card is flipped. The variables hasFlippedCard and flippedCard will manage the flip state. In case there is no card flipped, hasFlippedCard is set to true and flippedCard is set to the clicked card. Let’s also switch the toggle method to add:
 
 ```
+<!-- scripts.js -->
+
   const cards = document.querySelectorAll('.memory-card');
 
 + let hasFlippedCard = false;
@@ -327,6 +339,8 @@ So now, when the user clicks the second card, we will fall into the else block i
 Whenever we feel like adding extra information to HTML elements, we can make use of data attributes. By using the following syntax: data-*, where, * can be any word, that attribute will be inserted in the element’s dataset property. So, let’s add a `data-item` to each card:
 
 ```
+<!-- index.html -->
+
 + <div class="memory-card" data-item="star">
 ```
 So now we can check for a match by accessing both cards dataset. Let’s extract the matching logic to its own method checkForMatch() and also set hasFlippedCard back to false. In case of a match, disableCards() is invoked and the event listeners on both cards are detached, to prevent further flipping. Otherwise, unflipCards() will turn both cards back by a 1500ms timeout that removes the .flip class:
@@ -334,6 +348,8 @@ So now we can check for a match by accessing both cards dataset. Let’s extract
 Putting all together:
 
 ```
+<!-- scripts.js -->
+
 const cards = document.querySelectorAll('.memory-card');
 
   let hasFlippedCard = false;
@@ -382,6 +398,8 @@ const cards = document.querySelectorAll('.memory-card');
 A more elegant way of writing the matching condition is to use a ternary operator. It’s composed by three blocks. The first block is the condition to be evaluated. The second block is executed if the condition returns true, otherwise the executed block is the third:
 
 ```
+<!-- scripts.js -->
+
 - if (firstCard.dataset.name === secondCard.dataset.name) {
 -   disableCards();
 -   return;
@@ -399,6 +417,8 @@ So now that we have the matching logic covered, we need to lock the board. We lo
 Let’s declare a lockBoard variable. When the player clicks the second card, lockBoard will be set to true and the condition if (lockBoard) return; will prevent any card flipping before the cards are hidden or match:
 
 ```
+<!-- scripts.js -->
+
 const cards = document.querySelectorAll('.memory-card');
 
   let hasFlippedCard = false;
@@ -451,12 +471,16 @@ The is still the case where the player can click twice on the same card. The mat
 To prevent that, let’s check if the current clicked card is equal to the firstCard and return if positive.
 
 ```
+<!-- scripts.js -->
+
 if (this === firstCard) return;
 ```
 
 The `firstCard` and `secondCard` variables need to be reset after each round, so let’s extract that to a new method `resetBoard()`. Let’s place the `hasFlippedCard = false;` and `lockBoard = false` there too. The es6 destructuring assignment `[var1, var2] = ['value1', 'value2']`, allows us to keep the code super short:
 
 ```
+<!-- scripts.js -->
+
 function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
@@ -466,6 +490,8 @@ function resetBoard() {
 The new method will be called both from `disableCards()` and `unflipCards()`:
 
 ```
+<!-- scripts.js -->
+
 const cards = document.querySelectorAll('.memory-card');
 
   let hasFlippedCard = false;
@@ -529,6 +555,8 @@ When display: flex is declared on the container, flex-items are arranged by the 
 There is 12 cards in the game, so we will iterate through them, generate a random number between 0 and 12 and assign it to the flex-item order property:
 
 ```
+<!-- scripts.js -->
+
 function shuffle() {
   cards.forEach(card => {
     let ramdomPos = Math.floor(Math.random() * 12);
@@ -539,6 +567,8 @@ function shuffle() {
 In order to invoke the shuffle function, let’s make it a Immediately Invoked Function Expression (IIFE), which means it will execute itself right after its declaration. The scripts should look like this:
 
 ```
+<!-- scripts.js -->
+
 const cards = document.querySelectorAll('.memory-card');
 
   let hasFlippedCard = false;
@@ -598,6 +628,7 @@ const cards = document.querySelectorAll('.memory-card');
 
   cards.forEach(card => card.addEventListener('click', flipCard));
 ```
+### 🙌 YA LO TENEMOS
 
 ### 🏴‍☠️ Enlace del jueguico en codepen
 - Proyecto en [codepen](https://codepen.io/carmenansio/pen/OJZMBwq/c9a3da5deb777c337616360afb27e8a2)
