@@ -61,7 +61,8 @@ En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado,
 <section class="memory-game"></section>
 ```
 ### 🃏 Nuestro jueguico de cartas
-El juego tiene 18 cartas, cada una está creada por un `div` contenedor que hemos llamado `.memory-card`, el cuál tiene dos imágenes `SVG`. La primera imágen será la cara frontal `front-card` y la segunda será común a todas, con el logo original de Nintendo cómo `back-card`.
+El juego tiene 18 cartas, cada una está creada por un `div` contenedor que hemos llamado `.memory-card`, el cuál tiene dos imágenes `SVG`. 
+La primera imágen será la cara frontal `front-card` y la segunda será común a todas, con el logo original de Nintendo cómo `back-card`.
 
 ```
 <div class="memory-card">
@@ -98,7 +99,7 @@ Utilizaremos un reset muy básico pero efectivo 👇
 
 - Indicando al body que tenga un `display: flex` a la clase .memory-game que actua como contenedor, creamos una alineación vertical y horizontal.
 
-- La clase `.memory-game` también será un contenedor con comportamiento `flex-container`. Por defecto, los elementos vienen seteados con `shrink` en lo ancho para ajustarse al contenedor. Seteando `flex-wrap` con el valor `wrap`, los `flex-items` se wrapearan a lo largo de multiples lineas dependiendo de su propio tamaño.
+- La clase `.memory-game` también será un contenedor con comportamiento `flex-container`. Por defecto, los elementos vienen seteados con `shrink` en lo ancho para ajustarse al contenedor. Seteando `flex-wrap` con el valor `wrap`, los `flex-items` se posicionará  a lo largo de multiples lineas dependiendo de su propio tamaño.
 
 ```
 /* styles.css */
@@ -106,15 +107,15 @@ Utilizaremos un reset muy básico pero efectivo 👇
 body {
   height: 100vh;
   display: flex;
-  background: #060AB2;
 }
 
 .memory-game {
-  width: 640px;
-  height: 640px;
-  margin: auto;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  place-content: space-around;
+  justify-content: center;
 }
 ```
 ### 🍍 Dando estilo a nuestro jueguico
@@ -132,13 +133,10 @@ La propiedad `position: absolute` está indicada a ambas caras de las cartas `.f
   height: calc(33.333% - 10px);
   margin: 5px;
   position: relative;
-  transform: scale(1);
-  transform-style: preserve-3d;
-  transition: transform .5s;
 }
 
-.front-face,
-.back-face {
+.front-card,
+.back-card {
   width: 100%;
   height: 100%;
   padding: 20px;
@@ -151,17 +149,15 @@ La propiedad `position: absolute` está indicada a ambas caras de las cartas `.f
 <!-- TODO añadir pantallazo de este estado -->
 
 ### 🍿 Animando el cotarro
-Vamos a añadir una micro interacción que simulará un `efecto click`. La pseudo clase `:active` actuará de trigger cada vez que el elemento sea clicado y aplicará una animación al tamaño de la carta con `.2s transition`.
+Vamos a añadir una micro interacción que simulará un `efecto click`. La pseudo clase `:active` actuará de trigger cada vez que el elemento sea clicado y aplicará una animación al tamaño de la carta con `.2s transition`. A la clase `.memory-card` le añadimos un `transform: scale(1)`.
 
 
 ```
 .memory-card {
-  width: calc(25% - 10px);
+  width: calc(16.666% - 10px);
   height: calc(33.333% - 10px);
   margin: 5px;
   position: relative;
-  transform-style: preserve-3d;
-  box-shadow: 1px 1px 0 rgba(0, 0, 0, .3);
   transform: scale(1);
 }
 
@@ -218,31 +214,32 @@ La clase `.flip` rota la carta `180deg`:
 Para producir el `efecto 3D`, añadimos una propiedad de perspectiva a la clase `.memory-game`. Esta propiedad define cuanto de lejos en el plano de `a` el objeto se alejará de nuestra vista.
 
 
-Para un efecto `subtle` aplicamos a la perspectiva un valor de `1000px`:
+Para un efecto `subtle` aplicamos a la perspectiva un valor de `1000px` añadiendo a la clase `.memory-game` la propiedad `perspective: 1000px;`:
 
 ```
 /* styles.css */
 
 .memory-game {
-  width: 640px;
-  height: 640px;
-  margin: auto;
+   width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  place-content: space-around;
+  justify-content: center;
   perspective: 1000px;
 }
 ```
 To the `.memory-card` elements let’s add `transform-style: preserve-3d`, to position them in the 3D space created in the parent, instead of flattening it to the `z = 0` plane (`transform-style`).
+Añadiendo la propiedad `transform-style: preserve-3d;`
 
 ```
 /* styles.css */
 
 .memory-card {
-  width: calc(25% - 10px);
+  width: calc(16.666% - 10px);
   height: calc(33.333% - 10px);
   margin: 5px;
   position: relative;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
   transform: scale(1);
   transform-style: preserve-3d;
 }
@@ -253,11 +250,10 @@ Aplicamos una transición con la propiedad `transform` para producir el efecto d
 /* styles.css */
 
 .memory-card {
-  width: calc(25% - 10px);
+  width: calc(16.666% - 10px);
   height: calc(33.333% - 10px);
   margin: 5px;
   position: relative;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform .5s;
@@ -270,7 +266,7 @@ Right now, both .front-face and `.back-face` are stacked up onto each other, bec
 
 <!-- TODO añadir animacion de carta girando -->
 
-To reveal the image underneath it, let’s apply `backface-visibility: hidden` to `.front-face` and `.back-face`.
+To reveal the image underneath it, let’s apply `backface-visibility: hidden;` to `.front-face` and `.back-face`.
 
 ```
 /* styles.css */
@@ -287,7 +283,7 @@ To reveal the image underneath it, let’s apply `backface-visibility: hidden` t
 }
 ```
 
-Since we’ve hidden both images back face, there is nothing in the other side. So now we have to turn the `.front-face` `180` grados:
+Since we’ve hidden both images back face, there is nothing in the other side. So now we have to turn the `.front-face` `180` grados con la propiedad `transform: rotateY(180deg);`:
 
 ```
 .front-face {
