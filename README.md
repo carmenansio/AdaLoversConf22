@@ -54,12 +54,13 @@ En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado,
 
 ### 🍱 Layout principal
 
-![Board back](https://assets.codepen.io/527512/board-back.png)
-![Board front](https://assets.codepen.io/527512/board-front.png)
-
 ```
 <section class="memory-game"></section>
 ```
+
+![Board back](https://assets.codepen.io/527512/board-back.png)
+![Board front](https://assets.codepen.io/527512/board-front.png)
+
 ### 🧩 Assets para nuestro jueguico
 - Los assets originales los podéis encontrar en mi perfil de Community de Figma
 - En la carpeta assets en formato `.png` y `.svg`
