@@ -344,8 +344,6 @@ También cambiamos el método `toggle` para agregar:
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 ```
-//por aquí
-So now, when the user clicks the second card, we will fall into the else block in our condition. We will check to see if it’s a match. In order to do that, let’s identify each card.
 
 Entonces, cuando el usuario hace clic en la segunda carta, entramos en el bloque `else` de nuestra `condition`. Así que necesitamos comprobar si hay un `match` para poder hacer esto, tenemos que identificar cada una de las cartas.
 
@@ -436,7 +434,7 @@ Está compuesto por tres bloques:
 + isMatch ? disableCards() : unflipCards();
 ```
 ## 💎 Corner cases
-### Bloquear el tablero
+### 🧱 Bloquear el tablero
 Ahora ya tenemos la logica de emparejamiento, vamos a bloquear el tablero para evitar que dos juegos de cartas se giren al mismo tiempo, de lo contrario nuestro giro fallaría.
 
 ```
@@ -488,7 +486,7 @@ const cards = document.querySelectorAll('.memory-card');
   cards.forEach(card => card.addEventListener('click', flipCard));
 ```
 
-### Clicar dos veces en la misma carta
+### 🖱 Clicar dos veces en la misma carta
 Ya sabemos que cómo usuarias, somos expertas en liarla. Y sigue habiendo la posibilidad de clicar dos veces en la misma carta. 
 La condición de correspondencia se evaluaría como `true`, eliminando el `listener` del evento de esa carta. 
 Para evitar este comporatemiento, vamos a verificar si la carta actualizada actual es igual a la `firstCard` y que regrese si es positiva.
@@ -575,7 +573,7 @@ const cards = document.querySelectorAll('.memory-card');
 
   cards.forEach(card => card.addEventListener('click', flipCard));
 ```
-### Shuffling
+### 🃏 A barajar
 Nuestro juego se ve bastante bien, pero no hay diversión si las cartas no se barajan, así que vamos a revisar esta parte.
 
 Cuándo `display: flex` está declarado en el contenedor, los `flex-item` están organizados por la siguiente jerarquía: 
@@ -600,7 +598,9 @@ function shuffle() {
   });
 }
 ```
-In order to invoke the shuffle function, let’s make it a Immediately Invoked Function Expression (IIFE), which means it will execute itself right after its declaration. The scripts should look like this:
+Para invocar la `función shuffle`, hagamos que sea una expresión de la función invocada inmediatamente `(Immediately Invoked Function Expression - IIFE)`, lo que significa que se ejecutará justo después de su declaración. 
+
+Los scripts deberían verse así:
 
 ```
 <!-- scripts.js -->
