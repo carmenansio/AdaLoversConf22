@@ -162,7 +162,8 @@ La propiedad `position: absolute` está indicada a ambas caras de las cartas `.f
 ![Board Nintendo](./memory-game/assets/board-nintendo.png)
 
 ### 🍿 Animando el cotarro
-Vamos a añadir una micro interacción que simulará un `efecto click`. La pseudo clase `:active` actuará de trigger cada vez que el elemento sea clicado y aplicará una animación al tamaño de la carta con `.2s transition`. A la clase `.memory-card` le añadimos un `transform: scale(1)`.
+Vamos a añadir una micro interacción que simulará un `efecto click`. La **pseudo clase** `:active` actuará de **trigger** cada vez que el elemento sea clicado y aplicará una animación al tamaño de la carta con `.2s transition`. 
+A la clase `.memory-card` le añadimos un `transform: scale(1)`.
 
 ```
 <!-- styles.css -->
@@ -196,9 +197,10 @@ body {
 }
 ```
 ### 🩴 Flip card
-Para crear el efecto de voltear la carta cada vez que sea clicada, vamos a añadir la clase `.flip`. Con un `document.querySelectorAll` seleccionamos todos los elementos del contenedor `memory-card` se genera un loop con cada `forEach` y le atacha un `event listener`. 
+Para crear el efecto de voltear la carta cada vez que sea clicada, vamos a añadir la clase `.flip`. 
+- Con un `document.querySelectorAll` seleccionamos todos los elementos del contenedor `memory-card` y se genera un loop con cada `forEach` y le atacha un `event listener`. 
 
-Cada vez que una carta sea clicada la `función flipCard` será ejecutada.
+- **Cada vez que una carta sea** clicada la `función flipCard` será ejecutada.
 La variable `this` representa que la carta ha sido clicada. 
 
 La función `flipCard()` accede a los elementos de `classList` y hace un `toggles` a la `flip class`:
@@ -226,7 +228,7 @@ La clase `.flip` rota la carta `180deg`:
 Para producir el `efecto 3D`, añadimos una propiedad de perspectiva a la clase `.memory-game`. Esta propiedad define cuanto de lejos en el plano de `a` el objeto se alejará de nuestra vista.
 
 
-Para un efecto `subtle` aplicamos a la perspectiva un valor de `1000px` añadiendo a la clase `.memory-game` la propiedad `perspective: 1000px;`:
+Para un efecto **subtle** aplicamos a la perspectiva un valor de `1000px` añadiendo a la clase `.memory-game` la propiedad `perspective: 1000px;`:
 
 ```
 <!-- styles.css -->
@@ -241,7 +243,8 @@ Para un efecto `subtle` aplicamos a la perspectiva un valor de `1000px` añadien
   perspective: 1000px;
 }
 ```
-To the `.memory-card` elements let’s add `transform-style: preserve-3d`, to position them in the 3D space created in the parent, instead of flattening it to the `z = 0` plane (`transform-style`).
+A los elementos `.memory-card` le añadimos un `transform-style: preserve-3d`, para posicionarlos en el espacio en 3D que hemos creado en su madre, **en lugar de aplanarlos en el plano `z = 0`** (`transform-style`).
+
 Añadiendo la propiedad `transform-style: preserve-3d;`
 
 ```
@@ -256,7 +259,7 @@ Añadiendo la propiedad `transform-style: preserve-3d;`
   transform-style: preserve-3d;
 }
 ```
-Aplicamos una transición con la propiedad `transition: transform .5s;` para producir el efecto de movimiento:
+**Aplicamos una transición** con la propiedad `transition: transform .5s;` para producir el efecto de movimiento:
 
 ```
 <!-- styles.css -->
@@ -272,11 +275,16 @@ Aplicamos una transición con la propiedad `transition: transform .5s;` para pro
 }
 ```
 ### 🌍 3D flip
-So, we got the card to 3D flip, yay! But why isn’t the card face showing up?
+¡¡Ya tenemos la carta preparada para un volteo en 3D!!
 
-Right now, both .front-face and `.back-face` are stacked up onto each other, because they are absolutely positioned. Every element has a back face, which is a mirror image of its front face. The property `backface-visibility` defaults to visible, so when we flip the card, what we get is the JS badge `back-face`.
+Tengo una pregunta...
+**¿os aparece la cara de la carta?**
 
-To reveal the image underneath it, let’s apply `backface-visibility: hidden;` to `.front-face` and `.back-face`.
+En este momento, las dos caras `.back-card` y `.front-card` están posicionadas encima con un **posicionamiento absoluto**. 
+Cada elemento tiene una cara trasera, que es una imagen espejo de su cara delantera.
+La propiedad `backface-visibility` **por defecto es visible**, así que cuando la carta gira, lo que obtenemos es la cara con item de `.back-card`
+
+Para **revelar la imagen oculta** que hay debajo, aplicamos un `backface-visibility: hidden;` a las clases `.front-card` y `.back-card`.
 
 ```
 <!-- styles.css -->
@@ -293,7 +301,7 @@ To reveal the image underneath it, let’s apply `backface-visibility: hidden;` 
 }
 ```
 
-Since we’ve hidden both images back face, there is nothing in the other side. So now we have to turn the `.front-face` `180` grados con la propiedad `transform: rotateY(180deg);`:
+Como hemos ocultado ambas imágenes, la cara y la cruz, no hay nada en el otro lado. Así que ahora tenemos que girar la `.front-card` con `180` grados gracias a la propiedad `transform: rotateY(180deg);`:
 
 ```
 <!-- styles.css -->
@@ -303,11 +311,11 @@ Since we’ve hidden both images back face, there is nothing in the other side. 
 }
 ```
 
-Ya tenemos controlado el giro!
+Ya tenemos controlado el giro! 🥳
 
 ![Giro de la carta](./memory-game/assets/media/flip-card.gif)
 
-### 🧡 Encontrando la media naranja
+### 🧡 Encontrando su media naranja
 El comportamiento/funcionalidad que queremos es:
 
 - **Cuando hacemos clic en la primera carta**, debe esperar hasta que se gire la siguiente. 
