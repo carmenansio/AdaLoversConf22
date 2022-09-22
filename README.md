@@ -52,6 +52,14 @@ En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado,
 </html>
 ```
 
+### 🍱 Layout principal
+
+![Board back](https://assets.codepen.io/527512/board-back.png)
+![Board front](https://assets.codepen.io/527512/board-front.png)
+
+```
+<section class="memory-game"></section>
+```
 ### 🃏 Nuestro jueguico de cartas
 El juego tiene 18 cartas, cada una está creada por un `div` contenedor que hemos llamado `.memory-card`, el cuál tiene dos imágenes `SVG`. La primera imágen será la cara frontal `front-card` y la segunda será común a todas, con el logo original de Nintendo cómo `back-card`.
 
@@ -68,14 +76,6 @@ El juego tiene 18 cartas, cada una está creada por un `div` contenedor que hemo
     alt="Logo de Nintendo"
   />
 </div>
-```
-### 🍱 Layout principal
-
-![Board back](https://assets.codepen.io/527512/board-back.png)
-![Board front](https://assets.codepen.io/527512/board-front.png)
-
-```
-<section class="memory-game"></section>
 ```
 
 ### 🍍 Dando estilo a nuestro jueguico
