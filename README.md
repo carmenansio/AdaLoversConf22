@@ -198,7 +198,7 @@ body {
 
 ### 🩴 Flip card
 <!-- TODO estudiar bien esta parte -->
-Para crear el efecto de voltear la carta cada vez que sea clicada, vamos a añadir la clase `.flip`. Con un `document.querySelectorAll` seleccionamos todos los elementos del contenedor `memory-card` con `document.querySelectorAll`, se genera un loop con cada `forEach` y le atacha un `event listener`. 
+Para crear el efecto de voltear la carta cada vez que sea clicada, vamos a añadir la clase `.flip`. Con un `document.querySelectorAll` seleccionamos todos los elementos del contenedor `memory-card` se genera un loop con cada `forEach` y le atacha un `event listener`. 
 
 Cada vez que una carta sea clicada la `función flipCard` será ejecutada.
 La variable `this` representa que la carta ha sido clicada. 
