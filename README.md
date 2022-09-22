@@ -36,6 +36,7 @@ En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado,
 
 ```
 <!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -56,6 +57,7 @@ Creamos el layout principal con un tag `section` en la estructura del `html`.
 
 ```
 <!-- index.html -->
+
 <section class="memory-game"></section>
 ```
 
@@ -74,6 +76,7 @@ La primera imágen será la cara frontal `front-card` y **la segunda será comú
 
 ```
 <!-- styles.css -->
+
 <div class="memory-card">
   <img
     class="front-card"
@@ -93,6 +96,7 @@ Utilizaremos un **reset** muy básico pero **efectivo** 👇
 
 ```
 <!-- styles.css -->
+
 /* reset */
 
 * {
