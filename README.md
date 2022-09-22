@@ -392,17 +392,15 @@ A more elegant way of writing the matching condition is to use a ternary operato
 ```
 <!-- scripts.js -->
 
-if (firstCard.dataset.name === secondCard.dataset.name) {
-  disableCards();
-  return;
-}
+- if (firstCard.dataset.name === secondCard.dataset.name) {
+-   disableCards();
+-   return;
+- }
+-
+- unflipCards();
 
-unflipCards();
-
-<!-- añadimos estas dos líneas -->
-let isMatch = firstCard.dataset.name === secondCard.dataset.name;
-isMatch ? disableCards() : unflipCards();
-
++ let isMatch = firstCard.dataset.name === secondCard.dataset.name;
++ isMatch ? disableCards() : unflipCards();
 ```
 ## 💎 Corner cases
 ### Lock Board
