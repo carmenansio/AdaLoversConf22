@@ -301,10 +301,16 @@ Since we’ve hidden both images back face, there is nothing in the other side. 
 
 Ya tenemos controlado el giro!
 
-![Giro de la carta](./memory-game/assets/media/flip-card.mov)
+![Giro de la carta](./memory-game/assets/media/flip-card.gif)
 
 ### 🧡 Encontrando la media naranja
-When we click the first card, it needs to wait until another card is flipped. The variables hasFlippedCard and flippedCard will manage the flip state. In case there is no card flipped, hasFlippedCard is set to true and flippedCard is set to the clicked card. Let’s also switch the toggle method to add:
+El comportamiento/funcionalidad que queremos es:
+
+- **Cuando hacemos clic en la primera carta**, debe esperar hasta que se gire la siguiente. 
+- Las variables `hasFlippedCard` y `flippedCard` administrarán el `estado` de `flip`. 
+- **En caso de que no haya una carta girada**, `hasflippedCard` está configurada en `True` y `flippedCard` está configurada a la tarjeta que ha tenido el clic.
+
+También cambiamos el método `toggle` para agregar:
 
 ```
 <!-- scripts.js -->
