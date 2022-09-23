@@ -65,11 +65,12 @@ La **interfaz del juego** se ha diseñado en `Figma`. Cada `item` es un componen
 
 - Los assets originales los podéis encontrar en mi **perfil de Community de Figma**
 
-![Board back](https://assets.codepen.io/527512/board-back.png)
-![Board front](https://assets.codepen.io/527512/board-front.png)
 ### 🃏 Nuestro jueguico de cartas
 El juego consta de **18 cartas**, cada una está creada por un `div` contenedor que hemos llamado `.memory-card`, el cuál tiene **dos imágenes** `SVG`. 
 La primera imágen será la cara frontal `front-card` y **la segunda será común** a todas, con el logo original de **Nintendo** cómo `back-card`.
+
+![Board back](https://assets.codepen.io/527512/board-back.png)
+![Board front](https://assets.codepen.io/527512/board-front.png)
 
 ```
 <!-- styles.css -->
