@@ -26,18 +26,18 @@ Estos son los **archivos necesarios** para nuestro proyecto:
 ### 🍱 Cositas en nuestro HTML
 En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado, el `styles.css` y el `scripts.js`.
 
-```
+```diff
 <!-- index.html -->
 
 <!DOCTYPE html>
 <html lang="es">
   <head>
-      <meta charset="UTF-8">
-      <title>Super Mario Bros 3 - Juego de memoria</title>
-      <link rel="stylesheet" href="./styles.css">
+    <meta charset="UTF-8">
+    <title>Super Mario Bros 3 - Juego de memoria</title>
++   <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-      <script src="./scripts.js"></script>
++   <script src="./scripts.js"></script>
   </body>
 </html>
 ```
@@ -45,12 +45,21 @@ En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado,
 ### ⛩ Layout principal
 Creamos el layout principal con un tag `section` en la estructura del `html`.
 
-```
+```diff
 <!-- index.html -->
 
-<body>
-  <section class="memory-game"></section>
-</body>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Super Mario Bros 3 - Juego de memoria</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
++   <section class="memory-game"></section>
+    <script src="./scripts.js"></script>
+  </body>
+</html>
 ```
 
 ### 🧩 Assets para nuestro jueguico
@@ -72,7 +81,7 @@ La primera imágen será la cara frontal `front-card` y **la segunda será comú
 ![Board back](./memory-game/assets/readme/board-back.png)
 ![Board front](./memory-game/assets/readme/board-front.png)
 
-```
+```html
 <!-- styles.css -->
 
 <div class="memory-card">
@@ -92,7 +101,7 @@ La primera imágen será la cara frontal `front-card` y **la segunda será comú
 ### 💣 CSS al ataque
 Utilizaremos un **reset** muy básico pero **efectivo** 👇
 
-```
+```css
 <!-- styles.css -->
 
 /* reset */
@@ -112,7 +121,7 @@ Utilizaremos un **reset** muy básico pero **efectivo** 👇
 
 - La clase `.memory-game` también será un contenedor con comportamiento `flex-container`. Por defecto, los elementos vienen seteados con `shrink` en lo ancho para ajustarse al contenedor. Seteando `flex-wrap` con el valor `wrap`, los `flex-items` se posicionará  a lo largo de multiples lineas dependiendo de su propio tamaño.
 
-```
+```css
 <!-- styles.css -->
 
 .memory-game {
@@ -133,7 +142,7 @@ Para poder posicionar los **hijos** del contenedor `.memory-card`, hemos añadid
 
 La propiedad `position: absolute` está indicada a ambas caras de las cartas `.front-card` y `.back-card` esto hará que los elementos salgan de su flujo normal y se posicionen una cara sobre otra.
 
-```
+```css
 <!-- styles.css -->
 
 .memory-card {
@@ -157,9 +166,9 @@ La propiedad `position: absolute` está indicada a ambas caras de las cartas `.f
 
 ### 🍿 Animando el cotarro
 Vamos a añadir una micro interacción que simulará un `efecto click`. La **pseudo clase** `:active` actuará de **trigger** cada vez que el elemento sea clicado y aplicará una animación al tamaño de la carta con `.2s transition`. 
-A la clase `.memory-card` le añadimos un `transform: scale(1)`.
+A la clase `.memory-card` le añadimos un `transform: scale(1);`.
 
-```
+```diff
 <!-- styles.css -->
 
 .memory-card {
@@ -167,12 +176,12 @@ A la clase `.memory-card` le añadimos un `transform: scale(1)`.
   height: calc(33.333% - 10px);
   margin: 5px;
   position: relative;
-  transform: scale(1);
++ transform: scale(1);
 }
 
  .memory-card:active {
    transform: scale(0.97);
-   transition: transform .2s;
++  transition: transform .2s;
  }
  ```
 
@@ -181,11 +190,11 @@ Hemos añadido la **manita de Mario** como cursor para simular que es él quién
 
 Podemos **crear un cursor custom** con la siguiente linea de código👇
 
-```
+```diff
 <!-- styles.css -->
 
 body {
-  cursor: url('./assets/cursor.cur'), auto;
++ cursor: url('./assets/cursor.cur'), auto;
 }
 ```
 ### 🩴 Flip card
@@ -195,25 +204,25 @@ Para crear el efecto de voltear la carta cada vez que sea clicada, vamos a añad
 - **Cada vez que una carta sea** clicada la `función flipCard` será ejecutada.
 La variable `this` representa que la carta ha sido clicada. 
 
-La función `flipCard()` accede a los elementos de `classList` y hace un `toggles` a la `flip class`:
+La función `flipCard()` accede a los elementos de `classList` y hace un `toggle` a la `flip class`:
 
-```
+```diff
 <!-- scripts.js -->
 
 const cards = document.querySelectorAll('.memory-card');
 
-function flipCard() {
-  this.classList.toggle('flip');
-}
++function flipCard() {
++ this.classList.toggle('flip');
++}
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 ```
 
 La clase `.flip` rota la carta `180deg`:
 
-```
+```diff
 .memory-card.flip {
-  transform: rotateY(180deg);
++ transform: rotateY(180deg);
 }
 ```
 
@@ -222,7 +231,7 @@ Para producir el `efecto 3D`, añadimos una propiedad de perspectiva a la clase 
 
 Para un efecto **sutil** aplicamos a la perspectiva un valor de `1000px` añadiendo a la clase `.memory-game` la propiedad `perspective: 1000px;`:
 
-```
+```diff
 <!-- styles.css -->
 
 .memory-game {
@@ -232,14 +241,14 @@ Para un efecto **sutil** aplicamos a la perspectiva un valor de `1000px` añadie
   flex-flow: row wrap;
   place-content: space-around;
   justify-content: center;
-  perspective: 1000px;
++ perspective: 1000px;
 }
 ```
 A los elementos `.memory-card` le añadimos un `transform-style: preserve-3d`, para posicionarlos en el espacio en 3D que hemos creado en su madre, **en lugar de aplanarlos en el plano `z = 0`** (`transform-style`).
 
 Añadiendo la propiedad `transform-style: preserve-3d;`
 
-```
+```diff
 <!-- styles.css -->
 
 .memory-card {
@@ -248,12 +257,12 @@ Añadiendo la propiedad `transform-style: preserve-3d;`
   margin: 5px;
   position: relative;
   transform: scale(1);
-  transform-style: preserve-3d;
++ transform-style: preserve-3d;
 }
 ```
 **Aplicamos una transición** con la propiedad `transition: transform .5s;` para producir el efecto de movimiento:
 
-```
+```diff
 <!-- styles.css -->
 
 .memory-card {
@@ -263,7 +272,7 @@ Añadiendo la propiedad `transform-style: preserve-3d;`
   position: relative;
   transform: scale(1);
   transform-style: preserve-3d;
-  transition: transform .5s;
++ transition: transform .5s;
 }
 ```
 ### 💃 Vuelta en 3D
@@ -279,7 +288,7 @@ La propiedad `backface-visibility` **por defecto es visible**, así que cuando l
 
 Para **revelar la imagen oculta** que hay debajo, aplicamos un `backface-visibility: hidden;` a las clases `.front-card` y `.back-card`.
 
-```
+```diff
 <!-- styles.css -->
 
 .front-face,
@@ -290,17 +299,17 @@ Para **revelar la imagen oculta** que hay debajo, aplicamos un `backface-visibil
   position: absolute;
   border-radius: 10px;
   border: 3px solid var(--border);
-  backface-visibility: hidden;
++ backface-visibility: hidden;
 }
 ```
 
 Como hemos ocultado ambas imágenes, la cara y la cruz, no hay nada en el otro lado. Así que ahora tenemos que girar la `.front-card` con `180` grados gracias a la propiedad `transform: rotateY(180deg);`:
 
-```
+```diff
 <!-- styles.css -->
 
 .front-face {
-  transform: rotateY(180deg);
++ transform: rotateY(180deg);
 }
 ```
 
@@ -317,7 +326,7 @@ El comportamiento/funcionalidad que queremos es:
 
 También cambiamos el método `toggle` para agregar:
 
-```
+```diff
 <!-- scripts.js -->
 
   const cards = document.querySelectorAll('.memory-card');
@@ -345,7 +354,7 @@ Lo haremos utilizando la siguiente sintaxis:
 Data- *, donde, * puede ser cualquier palabra, ese atributo se insertará en la propiedad del conjunto de datos del elemento. 
 Ahora, vamos a añadir un `data-item` a cada carta:
 
-```
+```diff
 <!-- index.html -->
 
 + <div class="memory-card" data-item="star">
@@ -358,7 +367,7 @@ De lo contrario, `unflipCards()` devolverá ambas tarjetas con un tiempo de espe
 
 ### ⚡️ Fusiiiiiiiiión-ando todo:
 
-```
+```diff
 <!-- scripts.js -->
 
 const cards = document.querySelectorAll('.memory-card');
@@ -413,7 +422,7 @@ Está compuesto por tres bloques:
 2️⃣ El segundo bloque se ejecuta si la condición devuelve verdadera. 
 3️⃣ De lo contrario el bloque ejecutado es el tercero:
 
-```
+```diff
 <!-- scripts.js -->
 
 - if (firstCard.dataset.item === secondCard.dataset.item) {
@@ -430,7 +439,7 @@ Está compuesto por tres bloques:
 ### 🧱 Bloquear el tablero
 Ahora ya tenemos la logica de emparejamiento, vamos a bloquear el tablero para evitar que dos juegos de cartas se giren al mismo tiempo, de lo contrario nuestro giro fallaría.
 
-```
+```diff
 <!-- scripts.js -->
 
 const cards = document.querySelectorAll('.memory-card');
@@ -484,7 +493,7 @@ Ya sabemos que cómo usuarias, somos expertas en liarla. Y sigue habiendo la pos
 La condición de correspondencia se evaluaría como `true`, eliminando el `listener` del evento de esa carta. 
 Para evitar este comporatemiento, vamos a verificar si la carta actualizada actual es igual a la `firstCard` y que regrese si es positiva.
 
-```
+```js
 <!-- scripts.js -->
 
 if (this === firstCard) return;
@@ -496,8 +505,9 @@ La *es6 destructuring assignment* `[var1, var2] = ['value1', 'value2']`, nos per
 
 ℹ️ (Con **es6** nos referimos al estándar que ya va por la versión ES6 y determina cómo emplear el lenguaje Javascript)
 
-ℹ️ (Destructuring assignment es una sintaxis especial de ECMAScript 6 que nos permite **desempaquetar** `arrays` o `objects` en un montón de variables)
-```
+ℹ️ (Destructuring assignment es una sintaxis especial de ECMAScript 6 que nos permite **desempaquetar** `arrays` o `objects` en un montón de variables).
+
+```js
 <!-- scripts.js -->
 
 function resetBoard() {
@@ -508,7 +518,7 @@ function resetBoard() {
 
 El nuevo método será llamado por ambas `disableCards()` y `unflipCards()`:
 
-```
+```diff
 <!-- scripts.js -->
 
 const cards = document.querySelectorAll('.memory-card');
@@ -581,7 +591,7 @@ Si hay más de un grupo, los elementos se organizan en primer lugar mediante el 
 
 Hay **16 cartas** en este juego, vamos a iterar entre ellas, **generando un número random** entre 0 y 16 y asignandolo a la propiedad de orden del `flex-item`:
 
-```
+```js
 <!-- scripts.js -->
 
 function shuffle() {
@@ -595,7 +605,7 @@ Para invocar la `función shuffle`, hagamos que sea una expresión de la funció
 
 Los scripts deberían verse así:
 
-```
+```diff
 <!-- scripts.js -->
 
 const cards = document.querySelectorAll('.memory-card');
