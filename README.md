@@ -128,6 +128,7 @@ Utilizaremos un **reset** muy básico pero **efectivo** 👇
 La altura y el ancho de cada carta está calculado con la función `calc()` de `CSS`, hemos creado `3 filas`, con **6 cartas en cada fila** con un `16.6%` y una altura de `33.3%` y **restamos 10px** para añadir el margen entre cartas.
 
 Para poder posicionar los **hijos** del contenedor `.memory-card`, hemos añadido la propiedad `position: relative`, para poder posicionarlos de manera absoluta `position: absolute` y sean relativos al contenedor **madre**. 👇
+
 **❓ ¿Se entiende este comportamiento?**
 
 La propiedad `position: absolute` está indicada a ambas caras de las cartas `.front-card` y `.back-card` esto hará que los elementos salgan de su flujo normal y se posicionen una cara sobre otra.
