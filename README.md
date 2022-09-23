@@ -42,7 +42,7 @@ En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado,
 </html>
 ```
 
-### 🍱 Layout principal
+### ⛩ Layout principal
 Creamos el layout principal con un tag `section` en la estructura del `html`.
 
 ```
