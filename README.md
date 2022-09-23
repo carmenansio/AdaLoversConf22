@@ -416,14 +416,14 @@ Está compuesto por tres bloques:
 ```
 <!-- scripts.js -->
 
-- if (firstCard.dataset.name === secondCard.dataset.name) {
+- if (firstCard.dataset.item === secondCard.dataset.item) {
 -   disableCards();
 -   return;
 - }
 -
 - unflipCards();
 
-+ let isMatch = firstCard.dataset.name === secondCard.dataset.name;
++ let isMatch = firstCard.dataset.item === secondCard.dataset.item;
 + isMatch ? disableCards() : unflipCards();
 ```
 ## 💎 Corner cases
@@ -456,7 +456,7 @@ const cards = document.querySelectorAll('.memory-card');
   }
 
   function checkForMatch() {
-    let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+    let isMatch = firstCard.dataset.item === secondCard.dataset.item;
     isMatch ? disableCards() : unflipCards();
   }
 
@@ -536,7 +536,7 @@ const cards = document.querySelectorAll('.memory-card');
   }
 
   function checkForMatch() {
-    let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+    let isMatch = firstCard.dataset.item === secondCard.dataset.item;
     isMatch ? disableCards() : unflipCards();
   }
 
@@ -623,7 +623,7 @@ const cards = document.querySelectorAll('.memory-card');
   }
 
   function checkForMatch() {
-    let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+    let isMatch = firstCard.dataset.item === secondCard.dataset.item;
     isMatch ? disableCards() : unflipCards();
   }
 
