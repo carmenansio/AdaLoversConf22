@@ -8,14 +8,6 @@ En este tutorial veremos conceptos básico de `HTML`, `CSS` y `JS`. Tocaremos `t
 
 ![Super Mario Bros 3 intro](./memory-game/assets/media/intro.gif)
 
-### 👏 Diseño y Desarrollo
-
-La **interfaz del juego** se ha diseñado en `Figma`. Cada `item` es un componente con `variants` 👇
-
-![Diseño del tablero](./memory-game/assets/figma-board.png)
-![Diseño de los items](./memory-game/assets/figma-items.png)
-
-
 ### 🏗 Arquitectura de archivos
 
 Estos son los **archivos necesarios** para nuestro proyecto:
@@ -39,16 +31,14 @@ En el archivo `index.html` tenemos que linkar los dos archivos que hemos creado,
 
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-
-  <title>Super Mario Bros 3 - Juego de memoria</title>
-
-  <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-  <script src="./scripts.js"></script>
-</body>
+  <head>
+      <meta charset="UTF-8">
+      <title>Super Mario Bros 3 - Juego de memoria</title>
+      <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+      <script src="./scripts.js"></script>
+  </body>
 </html>
 ```
 
@@ -58,18 +48,25 @@ Creamos el layout principal con un tag `section` en la estructura del `html`.
 ```
 <!-- index.html -->
 
-<section class="memory-game"></section>
+<body>
+  <section class="memory-game"></section>
+</body>
 ```
 
-![Board back](https://assets.codepen.io/527512/board-back.png)
-![Board front](https://assets.codepen.io/527512/board-front.png)
-
 ### 🧩 Assets para nuestro jueguico
-- Los assets originales los podéis encontrar en mi **perfil de Community de Figma**
+La **interfaz del juego** se ha diseñado en `Figma`. Cada `item` es un componente con `variants` 👇
+
+![Diseño del tablero](./memory-game/assets/figma-board.png)
+![Diseño de los items](./memory-game/assets/figma-items.png)
+
 - En la carpeta assets en formato `.png` y `.svg`
 - `SVGOMG` para optimizar los `.svg`
 - `ImageOptim` para optimizar las imágenes
 
+- Los assets originales los podéis encontrar en mi **perfil de Community de Figma**
+
+![Board back](https://assets.codepen.io/527512/board-back.png)
+![Board front](https://assets.codepen.io/527512/board-front.png)
 ### 🃏 Nuestro jueguico de cartas
 El juego consta de **18 cartas**, cada una está creada por un `div` contenedor que hemos llamado `.memory-card`, el cuál tiene **dos imágenes** `SVG`. 
 La primera imágen será la cara frontal `front-card` y **la segunda será común** a todas, con el logo original de **Nintendo** cómo `back-card`.
