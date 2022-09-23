@@ -220,13 +220,13 @@ La clase `.flip` rota la carta `180deg`:
 Para producir el `efecto 3D`, añadimos una propiedad de perspectiva a la clase `.memory-game`. Esta propiedad define cuanto de lejos en el plano de `a` el objeto se alejará de nuestra vista.
 
 
-Para un efecto **subtle** aplicamos a la perspectiva un valor de `1000px` añadiendo a la clase `.memory-game` la propiedad `perspective: 1000px;`:
+Para un efecto **sutil** aplicamos a la perspectiva un valor de `1000px` añadiendo a la clase `.memory-game` la propiedad `perspective: 1000px;`:
 
 ```
 <!-- styles.css -->
 
 .memory-game {
-   width: 100vw;
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-flow: row wrap;
@@ -266,13 +266,14 @@ Añadiendo la propiedad `transform-style: preserve-3d;`
   transition: transform .5s;
 }
 ```
-### 🌍 3D flip
+### 💃 Vuelta en 3D
 ¡¡Ya tenemos la carta preparada para un volteo en 3D!!
 
 Tengo una pregunta...
 **¿os aparece la cara de la carta?**
 
 En este momento, las dos caras `.back-card` y `.front-card` están posicionadas encima con un **posicionamiento absoluto**. 
+
 Cada elemento tiene una cara trasera, que es una imagen espejo de su cara delantera.
 La propiedad `backface-visibility` **por defecto es visible**, así que cuando la carta gira, lo que obtenemos es la cara con item de `.back-card`
 
@@ -381,7 +382,7 @@ const cards = document.querySelectorAll('.memory-card');
 + }
 +
 + function checkForMatch() {
-+   if (firstCard.dataset.framework === secondCard.dataset.framework) {
++   if (firstCard.dataset.item === secondCard.dataset.item) {
 +     disableCards();
 +     return;
 +   }
