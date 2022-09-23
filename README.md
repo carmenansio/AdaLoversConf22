@@ -56,8 +56,8 @@ Creamos el layout principal con un tag `section` en la estructura del `html`.
 ### 🧩 Assets para nuestro jueguico
 La **interfaz del juego** se ha diseñado en `Figma`. Cada `item` es un componente con `variants` 👇
 
-![Diseño del tablero](./memory-game/assets/figma-board.png)
-![Diseño de los items](./memory-game/assets/figma-items.png)
+![Diseño del tablero](./memory-game/assets/readme/figma-board.png)
+![Diseño de los items](./memory-game/assets/readme/figma-items.png)
 
 - En la carpeta assets en formato `.png` y `.svg`
 - `SVGOMG` para optimizar los `.svg`
@@ -69,8 +69,8 @@ La **interfaz del juego** se ha diseñado en `Figma`. Cada `item` es un componen
 El juego consta de **18 cartas**, cada una está creada por un `div` contenedor que hemos llamado `.memory-card`, el cuál tiene **dos imágenes** `SVG`. 
 La primera imágen será la cara frontal `front-card` y **la segunda será común** a todas, con el logo original de **Nintendo** cómo `back-card`.
 
-![Board back](https://assets.codepen.io/527512/board-back.png)
-![Board front](https://assets.codepen.io/527512/board-front.png)
+![Board back](./memory-game/assets/readme/board-back.png)
+![Board front](./memory-game/assets/readme/board-front.png)
 
 ```
 <!-- styles.css -->
@@ -153,7 +153,7 @@ La propiedad `position: absolute` está indicada a ambas caras de las cartas `.f
   border: 3px solid var(--border);
 }
 ```
-![Board Nintendo](./memory-game/assets/board-nintendo.png)
+![Board Nintendo](./memory-game/assets/readme/board-nintendo.png)
 
 ### 🍿 Animando el cotarro
 Vamos a añadir una micro interacción que simulará un `efecto click`. La **pseudo clase** `:active` actuará de **trigger** cada vez que el elemento sea clicado y aplicará una animación al tamaño de la carta con `.2s transition`. 
