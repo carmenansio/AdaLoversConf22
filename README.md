@@ -110,17 +110,12 @@ Utilizaremos un **reset** muy básico pero **efectivo** 👇
 
 - El modelo de caja `box-sizing`: La propiedad `border-box` incluye los padding y valores de borders **dentro del tamaño total del elemento**, width y height. 🧮 Así **simplificamos los cálculos**.
 
-- Indicando al `body` que tenga un `display: flex` a la clase `.memory-game` que actua cómo contenedor, creamos una alineación vertical y horizontal.
+- Indicando `display: flex;` a la clase `.memory-game` que actua cómo contenedor, creamos una alineación vertical y horizontal.
 
 - La clase `.memory-game` también será un contenedor con comportamiento `flex-container`. Por defecto, los elementos vienen seteados con `shrink` en lo ancho para ajustarse al contenedor. Seteando `flex-wrap` con el valor `wrap`, los `flex-items` se posicionará  a lo largo de multiples lineas dependiendo de su propio tamaño.
 
 ```
 <!-- styles.css -->
-
-body {
-  height: 100vh;
-  display: flex;
-}
 
 .memory-game {
   width: 100vw;
@@ -191,8 +186,6 @@ Podemos **crear un cursor custom** con la siguiente linea de código👇
 <!-- styles.css -->
 
 body {
-  height: 100vh;
-  display: flex;
   cursor: url('./assets/cursor.cur'), auto;
 }
 ```

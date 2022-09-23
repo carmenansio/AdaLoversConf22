@@ -17,8 +17,6 @@
 /* styles */
 
 body {
-  height: 100vh;
-  display: flex;
   cursor: url('./assets/cursor.cur'), auto;
 }
 
