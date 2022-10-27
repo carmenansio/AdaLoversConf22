@@ -142,7 +142,7 @@ Para poder posicionar los **hijos** del contenedor `.memory-card`, hemos añadid
 
 La propiedad `position: absolute` está indicada a ambas caras de las cartas `.front-card` y `.back-card` esto hará que los elementos salgan de su flujo normal y se posicionen una cara sobre otra.
 
-```css
+```diff
 <!-- styles.css -->
 
 .memory-card {
@@ -154,12 +154,13 @@ La propiedad `position: absolute` está indicada a ambas caras de las cartas `.f
 
 .front-card,
 .back-card {
++ --border: #333333;
   width: 100%;
   height: 100%;
   padding: 20px;
   position: absolute;
   border-radius: 10px;
-  border: 3px solid var(--border);
++ border: 3px solid var(--border);
 }
 ```
 ![Board Nintendo](./memory-game/assets/readme/board-nintendo.png)
